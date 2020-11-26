@@ -28,11 +28,9 @@ public class LoginOrRegister extends AppCompatActivity implements View.OnClickLi
         if(v == login){
             Intent intent = new Intent(this, LoginActivity.class);
             startActivity(intent);
-            finish();
         } else if(v == register){
             Intent intent = new Intent(this, RegisterActivity.class);
             startActivity(intent);
-            finish();
         }
     }
 }
