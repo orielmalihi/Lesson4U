@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -19,6 +20,8 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     EditText mailb;
     EditText passb;
     Button loginb;
+    RadioGroup radioGroup;
+    String type;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,8 +30,21 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         mailb = findViewById(R.id.editTextTextEmailAddress2);
         passb = findViewById(R.id.editTextTextPassword2);
         loginb = findViewById(R.id.loginb3);
+        radioGroup = findViewById(R.id.radiogroup);
 
         loginb.setOnClickListener(this);
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                // find which radio button is selected
+                if(checkedId == R.id.radioButtonStudent) {
+                    type = "student";
+                } else if(checkedId == R.id.radioButtonTeacher) {
+                    type = "teacher";
+                }
+            }
+        });
     }
 
     @Override
@@ -38,9 +54,18 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                 public void onComplete(Task<AuthResult> task) {
                     if (task.isSuccessful()) {
                         Toast.makeText(RegisterActivity.this, "Successfully Registered", Toast.LENGTH_LONG).show();
-                        Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
-                        startActivity(intent);
-                        finish();
+                        if(type.equals("student")){
+                            Intent intent = new Intent(RegisterActivity.this, studentRegistration.class);
+                            startActivity(intent);
+                            finish();
+                        } else if(type.equals("teacher")){
+                            Intent intent = new Intent(RegisterActivity.this, teacherRegistration.class);
+                            startActivity(intent);
+                            finish();
+                        }else {
+                            Toast.makeText(RegisterActivity.this, "You must choose teacher/student", Toast.LENGTH_LONG).show();
+                        }
+
                     } else {
                         Toast.makeText(RegisterActivity.this, "Registration Failed", Toast.LENGTH_LONG).show();
                     }
