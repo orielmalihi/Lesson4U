@@ -1,6 +1,8 @@
 package com.example.lesson4u;
 
-import java.util.HashSet;
+
+import java.util.LinkedList;
+import java.util.List;
 
 public class TeacherObj {
     private String userID;
@@ -10,11 +12,11 @@ public class TeacherObj {
     private String phoneNum;
     private String city;
     private String pass;
-    private HashSet<String> subjects;
+    private List<Object> subjects;
 
 
     public TeacherObj( String id , String mail , String fname , String lname , String city , String phone,
-                       String pass , HashSet<String> subs){
+                       String pass , List<Object> subs){
         this.userID = id;
         this.city = city;
         this.email = mail;
@@ -22,7 +24,7 @@ public class TeacherObj {
         this.lastName = lname;
         this.phoneNum = phone;
         this.pass = pass;
-        this.subjects = new HashSet<String>();
+        this.subjects = new LinkedList<Object>();
     }
 
     public String getUserID() {
@@ -53,7 +55,7 @@ public class TeacherObj {
         return pass;
     }
 
-    public HashSet<String> getSubjects() {
+    public List<Object> getSubjects() {
         return subjects;
     }
 
@@ -85,7 +87,7 @@ public class TeacherObj {
         this.pass = pass;
     }
 
-    public void setSubjects(HashSet<String> subjects) {
+    public void setSubjects(List<Object> subjects) {
         this.subjects = subjects;
     }
 

@@ -1,20 +1,22 @@
 package com.example.lesson4u;
 
+import android.text.Editable;
+
 import java.util.HashSet;
 
 public class StudentObj {
-    private String userID;
-    private String email;
-    private String firstName;
-    private String lastName;
-    private String phoneNum;
-    private String city;
-    private String pass;
+    private Editable userID;
+    private Editable email;
+    private Editable firstName;
+    private Editable lastName;
+    private Editable phoneNum;
+    private Editable city;
+    private Editable pass;
 
 
 
-    public StudentObj( String id , String mail , String fname , String lname , String city , String phone,
-                       String pass ){
+    public StudentObj( Editable id , Editable mail , Editable fname , Editable lname , Editable city , Editable phone,
+                       Editable pass ){
         this.userID = id;
         this.city = city;
         this.email = mail;
@@ -25,59 +27,59 @@ public class StudentObj {
 
     }
 
-    public String getUserID() {
+    public Editable getUserID() {
         return userID;
     }
 
-    public String getEmail() {
+    public Editable getEmail() {
         return email;
     }
 
-    public String getFirstName() {
+    public Editable getFirstName() {
         return firstName;
     }
 
-    public String getLastName() {
+    public Editable getLastName() {
         return lastName;
     }
 
-    public String getPhoneNum() {
+    public Editable getPhoneNum() {
         return phoneNum;
     }
 
-    public String getCity() {
+    public Editable getCity() {
         return city;
     }
 
-    public String getPass() {
+    public Editable getPass() {
         return pass;
     }
 
-    public void setUserID(String userID) {
+    public void setUserID(Editable userID) {
         this.userID = userID;
     }
 
-    public void setEmail(String email) {
+    public void setEmail(Editable email) {
         this.email = email;
     }
 
-    public void setFirstName(String firstName) {
+    public void setFirstName(Editable firstName) {
         this.firstName = firstName;
     }
 
-    public void setLastName(String lastName) {
+    public void setLastName(Editable lastName) {
         this.lastName = lastName;
     }
 
-    public void setPhoneNum(String phoneNum) {
+    public void setPhoneNum(Editable phoneNum) {
         this.phoneNum = phoneNum;
     }
 
-    public void setCity(String city) {
+    public void setCity(Editable city) {
         this.city = city;
     }
 
-    public void setPass(String pass) {
+    public void setPass(Editable pass) {
         this.pass = pass;
     }
 
