@@ -10,7 +10,7 @@ import android.widget.EditText;
 
 import com.google.firebase.auth.FirebaseAuth;
 
-public class studentRegistration extends AppCompatActivity implements View.OnClickListener{
+public class userRegistration extends AppCompatActivity implements View.OnClickListener{
     FirebaseAuth auth = FirebaseAuth.getInstance();
     EditText First_name;
     EditText Last_name;
@@ -24,7 +24,7 @@ public class studentRegistration extends AppCompatActivity implements View.OnCli
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_student_registration);
+        setContentView(R.layout.activity_user_registration);
 
         First_name = findViewById(R.id.First_name);
         Last_name = findViewById(R.id.Last_name);
@@ -42,7 +42,7 @@ public class studentRegistration extends AppCompatActivity implements View.OnCli
     public void onClick(View v) {
         FirebaseStudent.writeNewStudent(userID.getText() , email.getText() , Phone_number.getText() , First_name.getText(),
                 Last_name.getText() , address.getText() , Password.getText());
-        Intent intent = new Intent(this, MainPageStudent.class);
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 }

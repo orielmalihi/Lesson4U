@@ -31,7 +31,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     protected void onStart() {
         super.onStart();
-//        System.out.println("***********************"+auth.getUid());
         if (auth.getUid() == null) {
             Intent intent = new Intent(this, LoginOrRegister.class);
             startActivity(intent);

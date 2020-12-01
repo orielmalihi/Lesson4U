@@ -3,6 +3,7 @@ package com.example.lesson4u;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -17,11 +18,12 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener {
     FirebaseAuth auth = FirebaseAuth.getInstance();
+    SharedPreferences sp;
     EditText mailb;
     EditText passb;
     Button loginb;
     RadioGroup radioGroup;
-    String type;
+    String type = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,8 +41,16 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 // find which radio button is selected
                 if(checkedId == R.id.radioButtonStudent) {
+                    SharedPreferences pref = getApplicationContext().getSharedPreferences("user_details", 0);
+                    SharedPreferences.Editor editor = pref.edit();
+                    editor.putString("type", "student");
+                    editor.apply();
                     type = "student";
                 } else if(checkedId == R.id.radioButtonTeacher) {
+                    SharedPreferences pref = getApplicationContext().getSharedPreferences("user_details", 0);
+                    SharedPreferences.Editor editor = pref.edit();
+                    editor.putString("type", "teacher");
+                    editor.apply();
                     type = "teacher";
                 }
             }
@@ -50,27 +60,24 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     @Override
     public void onClick(View v) {
         if (v == loginb) {
-            auth.createUserWithEmailAndPassword(mailb.getText().toString(), passb.getText().toString()).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                public void onComplete(Task<AuthResult> task) {
-                    if (task.isSuccessful()) {
-                        Toast.makeText(RegisterActivity.this, "Successfully Registered", Toast.LENGTH_LONG).show();
-                        if(type.equals("student")){
-                            Intent intent = new Intent(RegisterActivity.this, studentRegistration.class);
-                            startActivity(intent);
-                            finish();
-                        } else if(type.equals("teacher")){
-                            Intent intent = new Intent(RegisterActivity.this, teacherRegistration.class);
-                            startActivity(intent);
-                            finish();
-                        }else {
-                            Toast.makeText(RegisterActivity.this, "You must choose teacher/student", Toast.LENGTH_LONG).show();
+            if(auth.getUid() == null) {
+                auth.createUserWithEmailAndPassword(mailb.getText().toString(), passb.getText().toString()).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    public void onComplete(Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            Toast.makeText(RegisterActivity.this, "Successfully Registered", Toast.LENGTH_LONG).show();
+                        } else {
+                            Toast.makeText(RegisterActivity.this, "Registration Failed", Toast.LENGTH_LONG).show();
                         }
-
-                    } else {
-                        Toast.makeText(RegisterActivity.this, "Registration Failed", Toast.LENGTH_LONG).show();
                     }
-                }
-            });
+                });
+            }
+            if((type.equals("student") || type.equals("teacher")) && auth.getUid()!=null){
+                Intent intent = new Intent(RegisterActivity.this, userRegistration.class);
+                startActivity(intent);
+                finish();
+            }else {
+                Toast.makeText(RegisterActivity.this, "wait for 'Successfully Registered' and choose teacher/student", Toast.LENGTH_LONG).show();
+            }
         }
     }
 }
