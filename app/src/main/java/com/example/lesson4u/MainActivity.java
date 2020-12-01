@@ -3,9 +3,12 @@ package com.example.lesson4u;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -20,7 +23,11 @@ import java.util.Map;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     FirebaseAuth auth = FirebaseAuth.getInstance();
+    final String TAG = "MainActivity";
+    SharedPreferences sp;
     Button loguot;
+    TextView welcome;
+    String type;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +45,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else {
             Toast.makeText(this, "Already logged in", Toast.LENGTH_LONG).show();
             loguot = findViewById(R.id.button3);
+            welcome = findViewById(R.id.textView);
             loguot.setOnClickListener(this);
+            sp = getSharedPreferences("user_details", 0);
+            type = sp.getString("type", null);
+            Log.d(TAG, "type is "+type);
+            String fname = sp.getString("fname", null);
+            welcome.setText("Welcome "+fname);
         }
     }
 

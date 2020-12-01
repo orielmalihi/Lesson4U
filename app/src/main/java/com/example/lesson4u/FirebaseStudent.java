@@ -7,16 +7,16 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class FirebaseStudent {
 
-    public static void writeNewStudent(Editable id, Editable mail, Editable phone, Editable fname, Editable lname, Editable city , Editable pass){
+    public static void writeNewStudent(String uid, String mail, String phone, String fname, String lname, String city){
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("students");
-        StudentObj newStudent = new StudentObj(id , mail , fname , lname , city , phone, pass);
-        myRef.child(String.valueOf(id)).setValue(newStudent);
+        StudentObj newStudent = new StudentObj(mail , fname , lname , city , phone);
+        myRef.child(uid).setValue(newStudent);
     }
 
-    public DatabaseReference getStudent(String id){
+    public static DatabaseReference getStudent(String uid){
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("students");
-        return myRef.getRef().child(id);
+        return myRef.getRef().child(uid);
     }
 }

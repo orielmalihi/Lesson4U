@@ -1,6 +1,7 @@
 package com.example.lesson4u;
 
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -11,25 +12,18 @@ public class TeacherObj {
     private String lastName;
     private String phoneNum;
     private String city;
-    private String pass;
-    private List<Object> subjects;
+    private ArrayList<LessonObj> subjects;
 
 
-    public TeacherObj( String id , String mail , String fname , String lname , String city , String phone,
-                       String pass , List<Object> subs){
-        this.userID = id;
+    public TeacherObj( String mail , String fname , String lname , String city , String phone){
         this.city = city;
         this.email = mail;
         this.firstName = fname;
         this.lastName = lname;
         this.phoneNum = phone;
-        this.pass = pass;
-        this.subjects = new LinkedList<Object>();
+        this.subjects = new ArrayList<LessonObj>();
     }
 
-    public String getUserID() {
-        return userID;
-    }
 
     public String getEmail() {
         return email;
@@ -51,16 +45,8 @@ public class TeacherObj {
         return city;
     }
 
-    public String getPass() {
-        return pass;
-    }
-
-    public List<Object> getSubjects() {
+    public ArrayList<LessonObj> getSubjects() {
         return subjects;
-    }
-
-    public void setUserID(String userID) {
-        this.userID = userID;
     }
 
     public void setEmail(String email) {
@@ -83,11 +69,7 @@ public class TeacherObj {
         this.city = city;
     }
 
-    public void setPass(String pass) {
-        this.pass = pass;
-    }
-
-    public void setSubjects(List<Object> subjects) {
+    public void setSubjects(ArrayList<LessonObj> subjects) {
         this.subjects = subjects;
     }
 
