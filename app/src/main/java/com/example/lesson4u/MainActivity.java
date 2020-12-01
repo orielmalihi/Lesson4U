@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (auth.getUid() == null) {
             Intent intent = new Intent(this, LoginOrRegister.class);
             startActivity(intent);
+            finish();
         } else {
             Toast.makeText(this, "Already logged in", Toast.LENGTH_LONG).show();
             loguot = findViewById(R.id.button3);
@@ -64,7 +65,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         if(v == loguot){
             auth.signOut();
-            Intent intent = new Intent(this, LoginActivity.class);
+            Intent intent = new Intent(this, LoginOrRegister.class);
             startActivity(intent);
         }
     }

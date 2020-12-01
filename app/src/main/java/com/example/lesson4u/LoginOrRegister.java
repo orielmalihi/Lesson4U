@@ -11,6 +11,7 @@ public class LoginOrRegister extends AppCompatActivity implements View.OnClickLi
     Button login;
     Button register;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
