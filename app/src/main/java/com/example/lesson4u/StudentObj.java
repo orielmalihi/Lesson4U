@@ -10,9 +10,9 @@ public class StudentObj {
     private String lastName;
     private String phoneNum;
     private String city;
-    private String pass;
 
 
+    public StudentObj(){}
 
     public StudentObj( String mail , String fname , String lname , String city , String phone){
         this.city = city;

@@ -15,6 +15,9 @@ public class TeacherObj {
     private ArrayList<LessonObj> subjects;
 
 
+
+    public TeacherObj(){}
+
     public TeacherObj( String mail , String fname , String lname , String city , String phone){
         this.city = city;
         this.email = mail;

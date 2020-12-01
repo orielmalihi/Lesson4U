@@ -4,9 +4,9 @@ public class LessonObj {
     private String teacherUID;
     private String subject;
     private String level;
-    private String price;
+    private int price;
 
-    public LessonObj(String uid, String sub, String lev, String pr){
+    public LessonObj(String uid, String sub, String lev, int pr){
         teacherUID = uid;
         subject = sub;
         level = lev;
@@ -38,11 +38,11 @@ public class LessonObj {
         this.level = level;
     }
 
-    public String getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 }
