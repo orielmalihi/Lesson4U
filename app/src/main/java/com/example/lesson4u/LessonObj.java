@@ -5,12 +5,16 @@ public class LessonObj {
     private String subject;
     private String level;
     private int price;
+    private String date;
+    private String time;
 
-    public LessonObj(String uid, String sub, String lev, int pr){
+    public LessonObj(String uid, String sub, String lev, int pr, String date, String time) {
         teacherUID = uid;
         subject = sub;
         level = lev;
         price = pr;
+        this.date = date;
+        this.time = time;
     }
 
 
