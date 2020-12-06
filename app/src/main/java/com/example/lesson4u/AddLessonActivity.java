@@ -38,19 +38,14 @@ public class AddLessonActivity extends AppCompatActivity {
         eDate = findViewById(R.id.LessonDate);
         spLessonSubjects = findViewById(R.id.chooseLessonSubSpinner);
         spLevel = findViewById(R.id.chooseLevelSpinner);
-
         price = findViewById(R.id.LessonPrice);
-
-        String selectedLevel = spLevel.getSelectedItem().toString();
-        String lessonSubjct = spLessonSubjects.getSelectedItem().toString();
 
         bAddLesson.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
                 DatabaseReference myRef = database.getReference("lessons");
-                LessonObj newLesson = new LessonObj(currentuser, lessonSubjct, selectedLevel, Integer.parseInt(price.getText().toString())
-                        , eDate.getText().toString(), eTime.getText().toString());
+                LessonObj newLesson = new LessonObj(currentuser, spLessonSubjects.getSelectedItem().toString(), spLevel.getSelectedItem().toString(), Integer.parseInt(price.getText().toString()), eDate.getText().toString(), eTime.getText().toString());
                 myRef.push().setValue(newLesson).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(Task<Void> task) {

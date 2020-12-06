@@ -149,16 +149,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     if(type.equals("students")){
                         type = "student";
                         StudentObj s = dataSnapshot.child(auth.getUid()).getValue(StudentObj.class);
-                        addInfoToTheSharedPreferncesFile("type", type);
+                        addInfoToTheSharedPreferencesFile("type", type);
                         Log.d(TAG, "refreshPS:dataSnapshot type = "+type);
-                        addInfoToTheSharedPreferncesFile("fname", s.getFirstName());
+                        addInfoToTheSharedPreferencesFile("fname", s.getFirstName());
                         Log.d(TAG, "refreshPS:dataSnapshot first name = "+s.getFirstName());
                     } else if(type.equals("teachers")){
                         type = "teacher";
                         TeacherObj t = dataSnapshot.child(auth.getUid()).getValue(TeacherObj.class);
-                        addInfoToTheSharedPreferncesFile("type", type);
+                        addInfoToTheSharedPreferencesFile("type", type);
                         Log.d(TAG, "refreshPS:dataSnapshot type = "+type);
-                        addInfoToTheSharedPreferncesFile("fname", t.getFirstName());
+                        addInfoToTheSharedPreferencesFile("fname", t.getFirstName());
                         Log.d(TAG, "refreshPS:dataSnapshot first name = "+t.getFirstName());
                     }
                 }
@@ -176,7 +176,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         teachersRef.addValueEventListener(listener);
 //        Log.d(TAG, "userRef is " + userRef.getKey() + ", userRef2 is " + userRef2.getKey());
     }
-    private void addInfoToTheSharedPreferncesFile(String key, String value){
+    private void addInfoToTheSharedPreferencesFile(String key, String value){
         sp = getApplicationContext().getSharedPreferences("user_details", 0);
         SharedPreferences.Editor editor = sp.edit();
         editor.putString(key, value);
