@@ -49,4 +49,12 @@ public class LessonObj {
     public void setPrice(int price) {
         this.price = price;
     }
+
+    public String getDate() {
+        return date;
+    }
+
+    public String getTime() {
+        return time;
+    }
 }

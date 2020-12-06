@@ -25,10 +25,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     FirebaseAuth auth = FirebaseAuth.getInstance();
     final String TAG = "MainActivity";
     SharedPreferences sp;
-    Button loguot;
+    Button logout;
     Button refresh;
     Button profile;
-    Button dinamic;
+    Button dynamic;
     Button scheduledLessons;
     TextView welcome;
     String type;
@@ -61,24 +61,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             refreshPS();
 
 //            Toast.makeText(this, "Already logged in", Toast.LENGTH_LONG).show();
-            loguot = findViewById(R.id.button3);
+            logout = findViewById(R.id.button3);
             refresh = findViewById(R.id.button4);
             welcome = findViewById(R.id.textView);
             profile = findViewById(R.id.profilebt);
-            dinamic = findViewById(R.id.dinamicBt);
+            dynamic = findViewById(R.id.dinamicBt);
             scheduledLessons = findViewById(R.id.scheduledLessonsBt);
-            loguot.setOnClickListener(this);
+            logout.setOnClickListener(this);
             refresh.setOnClickListener(this);
             profile.setOnClickListener(this);
-            dinamic.setOnClickListener(this);
+            dynamic.setOnClickListener(this);
             scheduledLessons.setOnClickListener(this);
             sp = getSharedPreferences("user_details", 0);
             type = sp.getString("type", null);
             Log.d(TAG, "type is " + type);
             if (type.equals("student")) {
-                dinamic.setText("search for lessons");
+                dynamic.setText("search for lessons");
             } else if (type.equals("teacher")) {
-                dinamic.setText("add lesson");
+                dynamic.setText("add lesson");
             }
             String fname = sp.getString("fname", null);
             welcome.setText("Welcome " + fname);
@@ -105,7 +105,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        if (v == loguot) {
+        if (v == logout) {
             auth.signOut();
             Intent intent = new Intent(this, LoginOrRegister.class);
             startActivity(intent);
@@ -113,7 +113,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else if (v == profile) {
             Intent intent = new Intent(this, ProfileActivity.class);
             startActivity(intent);
-        } else if (v == dinamic) {
+        } else if (v == dynamic) {
             if (type.equals("student")) {
                 Intent intent = new Intent(this, SearchForLessonsActivity.class);
                 startActivity(intent);
