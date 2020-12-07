@@ -13,7 +13,8 @@
         android:layout_height="38dp"
         android:fontFamily="@font/abeezee_italic"
         android:text="logout"
-        app:backgroundTint="@color/black"
+        app:backgroundTint="#AD00838F"
+        app:iconTint="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.786"
@@ -32,7 +33,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.75" />
+        app:layout_constraintVertical_bias="0.7" />
 
     <Button
         android:id="@+id/button4"
@@ -40,7 +41,7 @@
         android:layout_height="38dp"
         android:fontFamily="@font/abeezee_italic"
         android:text="refresh"
-        app:backgroundTint="@color/black"
+        app:backgroundTint="#AD00838F"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.128"
@@ -70,7 +71,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.877" />
+        app:layout_constraintVertical_bias="0.819" />
 
     <TextView
         android:id="@+id/textView"
@@ -100,7 +101,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.654"
+        app:layout_constraintVertical_bias="0.597"
         app:strokeColor="#FFFFFF" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
