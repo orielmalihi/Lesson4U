@@ -51,8 +51,9 @@ public class AddLessonActivity extends AppCompatActivity {
                     public void onComplete(Task<Void> task) {
                         if (task.isSuccessful()) {
                             Toast.makeText(AddLessonActivity.this, "Successfully Added Lesson", Toast.LENGTH_SHORT).show();
-                            //TODO: Adding refresh func
-                            // startActivity(new Intent(getApplicationContext(), AddLessonActivity.class));
+                            eTime.getText().clear();
+                            eDate.getText().clear();
+                            price.getText().clear();
                         } else {
                             Toast.makeText(AddLessonActivity.this, "Lesson adding failed", Toast.LENGTH_SHORT).show();
                         }
