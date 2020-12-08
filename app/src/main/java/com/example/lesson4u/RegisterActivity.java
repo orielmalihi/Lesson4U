@@ -78,7 +78,8 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                 }
                 if(type.equals("")){  // Make sure teacher/student is selected
                     Toast.makeText(RegisterActivity.this, "Select user type (Teacher/Student)", Toast.LENGTH_LONG).show();
-                } else{
+
+                }else{
 
                     auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                         public void onComplete(Task<AuthResult> task) {
