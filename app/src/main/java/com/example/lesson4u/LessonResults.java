@@ -24,6 +24,7 @@ public class LessonResults extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lesson_results);
+
         listView = findViewById(R.id.listView);
         refresh = findViewById(R.id.button5);
         refresh.setOnClickListener(this);
@@ -48,6 +49,7 @@ public class LessonResults extends AppCompatActivity implements View.OnClickList
                 Toast.makeText(LessonResults.this, "refreshed Failed", Toast.LENGTH_LONG).show();
             }
         }
+
     }
 
 }

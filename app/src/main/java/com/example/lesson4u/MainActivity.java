@@ -39,6 +39,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
     }
+
+    // What is this?
 //    protected void onReStart(){
 //        super.onRestart();
 //        this.onStart();

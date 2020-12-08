@@ -12,7 +12,7 @@ public class TeacherObj {
     private String lastName;
     private String phoneNum;
     private String city;
-    private ArrayList<LessonObj> subjects;
+    private ArrayList<LessonObj> lessons;
 
 
 
@@ -24,7 +24,7 @@ public class TeacherObj {
         this.firstName = fname;
         this.lastName = lname;
         this.phoneNum = phone;
-        this.subjects = new ArrayList<LessonObj>();
+        this.lessons = new ArrayList<LessonObj>(); // only scheduled lessons
     }
 
 
@@ -48,8 +48,8 @@ public class TeacherObj {
         return city;
     }
 
-    public ArrayList<LessonObj> getSubjects() {
-        return subjects;
+    public ArrayList<LessonObj> getLessons() {
+        return lessons;
     }
 
     public void setEmail(String email) {
@@ -72,10 +72,15 @@ public class TeacherObj {
         this.city = city;
     }
 
-    public void setSubjects(ArrayList<LessonObj> subjects) {
-        this.subjects = subjects;
+    public void addLesson(LessonObj lesson) {
+        lessons.add(lesson);
     }
-
+    /*
+    Remove lesson if past or cancelled
+     */
+    boolean removeLesson(LessonObj lesson) {
+        return(lessons.remove(lesson));
+    }
 
 
 }
