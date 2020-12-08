@@ -11,6 +11,6 @@ public class LessonResults extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lesson_results);
 
-
+        //TODO: display search results from SearchForLessonsActivity
     }
 }

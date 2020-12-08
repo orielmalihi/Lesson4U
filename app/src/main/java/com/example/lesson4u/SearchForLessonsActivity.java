@@ -30,7 +30,7 @@ public class SearchForLessonsActivity extends AppCompatActivity {
 
     private FirebaseAuth auth = FirebaseAuth.getInstance();
     final String TAG = "SearchLessonsActivity";
-    private String currentuser;
+    private String currentUser;
     private Button bSearchLesson;
     private EditText eDate;
     private EditText beginTime;
@@ -43,7 +43,7 @@ public class SearchForLessonsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_for_lessons);
-        currentuser = auth.getInstance().getCurrentUser().getUid();
+        currentUser = auth.getInstance().getCurrentUser().getUid();
         bSearchLesson = findViewById(R.id.SearchButton);
         eDate = findViewById(R.id.DateSearch);
         beginTime = findViewById(R.id.FromTime);

@@ -73,10 +73,10 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                 if(TextUtils.isEmpty(email)){
                     mailb.setError("Please enter your Email");
                 }
-                if(TextUtils.isEmpty(password) || password.length()<6){
+                else if(TextUtils.isEmpty(password) || password.length()<6){
                     passb.setError("Enter at least 6 characters");
                 }
-                if(type.equals("")){  // Make sure teacher/student is selected
+                else if(type.equals("")){  // Make sure teacher/student is selected
                     Toast.makeText(RegisterActivity.this, "Select user type (Teacher/Student)", Toast.LENGTH_LONG).show();
 
                 }else{
