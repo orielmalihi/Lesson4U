@@ -8,6 +8,19 @@ public class LessonObj {
     private String date;
     private String time;
 
+    public boolean isScheduled() {
+        return isScheduled;
+    }
+
+    public void setScheduled(boolean scheduled) {
+        isScheduled = scheduled;
+    }
+
+    private boolean isScheduled = false;
+
+    public LessonObj(){
+
+    }
     public LessonObj(String uid, String sub, String lev, int pr, String date, String time) {
         teacherUID = uid;
         subject = sub;

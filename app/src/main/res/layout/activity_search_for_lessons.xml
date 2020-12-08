@@ -4,6 +4,114 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/booksback"
     tools:context=".SearchForLessonsActivity">
 
+    <Button
+        android:id="@+id/SearchButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/abeezee_italic"
+        android:text="Search"
+        app:backgroundTint="#AD00838F"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.828" />
+
+    <EditText
+        android:id="@+id/DateSearch"
+        android:layout_width="293dp"
+        android:layout_height="45dp"
+        android:ems="10"
+        android:fontFamily="@font/abeezee_italic"
+        android:hint="DD/MM/YYYY"
+        android:inputType="date"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.539" />
+
+    <EditText
+        android:id="@+id/FromTime"
+        android:layout_width="293dp"
+        android:layout_height="45dp"
+        android:ems="10"
+        android:fontFamily="@font/abeezee_italic"
+        android:hint="From - HH:MM"
+        android:inputType="time"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.631" />
+
+    <EditText
+        android:id="@+id/ToTime"
+        android:layout_width="293dp"
+        android:layout_height="45dp"
+        android:ems="10"
+        android:fontFamily="@font/abeezee_italic"
+        android:hint="To - HH/MM"
+        android:inputType="time"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.72" />
+
+    <Spinner
+        android:id="@+id/Subject"
+        android:layout_width="293dp"
+        android:layout_height="45dp"
+        android:entries="@array/subjects"
+        android:hint="Please choose subject"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.361" />
+
+    <Spinner
+        android:id="@+id/level"
+        android:layout_width="293dp"
+        android:layout_height="45dp"
+        android:entries="@array/subj_levels"
+        android:hint="Please choose level"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.454" />
+
+    <TextView
+        android:id="@+id/text_search"
+        android:layout_width="195dp"
+        android:layout_height="46dp"
+        android:fontFamily="@font/abeezee_italic"
+        android:text="Search lesson"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.242" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="157dp"
+        android:layout_height="138dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.464"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.082"
+        app:srcCompat="@drawable/logo_transparent_background" />
 </androidx.constraintlayout.widget.ConstraintLayout>

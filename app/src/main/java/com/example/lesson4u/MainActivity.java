@@ -117,11 +117,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             if (type.equals("student")) {
                 Intent intent = new Intent(this, SearchForLessonsActivity.class);
                 startActivity(intent);
-                finish();
+
             } else if (type.equals("teacher")) {
                 Intent intent = new Intent(this, AddLessonActivity.class);
                 startActivity(intent);
+<<<<<<< HEAD
                 //finish();
+=======
+
+>>>>>>> b6a3b8e42ed72e27928e3d55ab88497facf2bf08
             }
         } else if (v == scheduledLessons) {
             Intent intent = new Intent(this, ScheduledLessonsActivity.class);

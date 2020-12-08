@@ -24,8 +24,6 @@ public class userRegistration extends AppCompatActivity implements View.OnClickL
     EditText email;
     EditText city;
     EditText Phone_number;
-    EditText userID;
-    EditText Password;
     Button registrationB;
 
     @Override
@@ -35,7 +33,7 @@ public class userRegistration extends AppCompatActivity implements View.OnClickL
 
         First_name = findViewById(R.id.First_name);
         Last_name = findViewById(R.id.Last_name);
-        email = findViewById(R.id.email);
+        email = findViewById(R.id.emailLogin);
         city = findViewById(R.id.city);
         Phone_number = findViewById(R.id.Phone_number);
         registrationB = findViewById(R.id.registration_button);

@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/booksback"
-    tools:context=".ProfileActivity">
+    tools:context=".LessonResults">
 
     <ImageView
-        android:id="@+id/imageView9"
+        android:id="@+id/imageView10"
         android:layout_width="157dp"
         android:layout_height="138dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -20,11 +20,11 @@
         app:srcCompat="@drawable/logo_transparent_background" />
 
     <TextView
-        android:id="@+id/textView5"
-        android:layout_width="154dp"
-        android:layout_height="51dp"
+        android:id="@+id/textView6"
+        android:layout_width="103dp"
+        android:layout_height="64dp"
         android:fontFamily="@font/abeezee_italic"
-        android:text="My profile"
+        android:text="Results"
         android:textColor="@color/black"
         android:textSize="30sp"
         android:textStyle="bold"
