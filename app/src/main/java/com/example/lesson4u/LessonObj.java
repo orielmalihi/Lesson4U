@@ -7,6 +7,8 @@ public class LessonObj {
     private int price;
     private String date;
     private String time;
+    private boolean isScheduled = false;
+
 
     public boolean isScheduled() {
         return isScheduled;
@@ -16,7 +18,7 @@ public class LessonObj {
         isScheduled = scheduled;
     }
 
-    private boolean isScheduled = false;
+
 
     public LessonObj(){
 

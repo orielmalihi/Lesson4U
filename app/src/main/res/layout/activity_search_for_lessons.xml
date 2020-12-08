@@ -7,6 +7,32 @@
     android:background="@drawable/booksback"
     tools:context=".SearchForLessonsActivity">
 
+    <Spinner
+        android:id="@+id/subject2"
+        android:layout_width="293dp"
+        android:layout_height="45dp"
+        android:entries="@array/hours"
+        android:hint="End time"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.706" />
+
+    <Spinner
+        android:id="@+id/subject"
+        android:layout_width="293dp"
+        android:layout_height="45dp"
+        android:entries="@array/hours"
+        android:hint="Start time"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.623" />
+
     <Button
         android:id="@+id/SearchButton"
         android:layout_width="wrap_content"
@@ -33,34 +59,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.539" />
-
-    <EditText
-        android:id="@+id/FromTime"
-        android:layout_width="293dp"
-        android:layout_height="45dp"
-        android:ems="10"
-        android:fontFamily="@font/abeezee_italic"
-        android:hint="From - HH:MM"
-        android:inputType="time"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.631" />
-
-    <EditText
-        android:id="@+id/ToTime"
-        android:layout_width="293dp"
-        android:layout_height="45dp"
-        android:ems="10"
-        android:fontFamily="@font/abeezee_italic"
-        android:hint="To - HH/MM"
-        android:inputType="time"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.72" />
 
     <Spinner
         android:id="@+id/Subject"
@@ -114,4 +112,5 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.082"
         app:srcCompat="@drawable/logo_transparent_background" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
