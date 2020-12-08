@@ -42,43 +42,9 @@ public class customAdapter extends BaseAdapter implements ListAdapter {
         this.list = list;
         this.context = context;
         getLessonsFromDB();
-//        Thread thread = new Thread(new Runnable() {
-//            @Override
-//            public void run() {
-//                getLessonsFromDB();
-//
-//            }
-//        });
-//        thread.start();
-//        while(!isQueryingFinished){
-//            try {
-//                Thread.sleep(500);
-//            } catch (InterruptedException e) {
-//                e.printStackTrace();
-//            }
-//        }
 
         Log.d(Tag, "1lesson.size : "+lessons.size() + ", list.size = "+list.size() );
-//        myRef.addValueEventListener(new ValueEventListener() {
-//
-//            @Override
-//            public void onDataChange(DataSnapshot dataSnapshot) {
-//               for(int i =0; i<list.size(); i++){
-//                   lessons.add(dataSnapshot.child(list.get(i)).getValue(LessonObj.class));
-//               }
-//            }
-//            @Override
-//            public void onCancelled(DatabaseError databaseError) {
-//            }
-//
-//        });
-//        while(!con){
-//            try {
-//                Thread.sleep(1000);
-//            } catch (InterruptedException e) {
-//                e.printStackTrace();
-//            }
-//        }
+
     }
 
     @Override
@@ -88,22 +54,6 @@ public class customAdapter extends BaseAdapter implements ListAdapter {
 
     @Override
     public Object getItem(int pos) {
-
-//        FirebaseDatabase database = FirebaseDatabase.getInstance();
-//        DatabaseReference myRef = database.getReference("lessons");
-//        myRef.addValueEventListener(new ValueEventListener() {
-//
-//            @Override
-//            public void onDataChange(DataSnapshot dataSnapshot) {
-//                tempLesson = dataSnapshot.child(list.get(pos)).getValue(LessonObj.class);
-//                return tempLesson;
-//
-//            }
-//            @Override
-//            public void onCancelled(DatabaseError databaseError) {
-//            }
-//
-//        });
         return list.get(pos);
     }
 
@@ -126,9 +76,14 @@ public class customAdapter extends BaseAdapter implements ListAdapter {
         //Handle TextView and display string from your list
         TextView tvContact= (TextView)view.findViewById(R.id.tvContact);
         Log.d(Tag, "2lesson.size : "+lessons.size() + ", list.size = "+list.size() );
-//        LessonObj templ = lessons.get(position);
-//        tvContact.setText("         | date: "+templ.getDate()+" | time: "+templ.getTime()+":00 | price: "+templ.getPrice());
-        tvContact.setText(list.get(position)); //////// ?????
+        if(lessons.size()==list.size()){
+            LessonObj templ = lessons.get(position);
+            tvContact.setText("          | time: "+templ.getTime()+":00 | price: "+templ.getPrice());
+        }else{
+            tvContact.setText(list.get(position));
+        }
+
+
 
         //Handle buttons and add onClickListeners
         Button callbtn= (Button)view.findViewById(R.id.btn);
@@ -146,7 +101,7 @@ public class customAdapter extends BaseAdapter implements ListAdapter {
             @Override
             public void onClick(View v) {
                 //do something
-//                notifyDataSetChanged();
+
             }
         });
 
@@ -154,19 +109,20 @@ public class customAdapter extends BaseAdapter implements ListAdapter {
     }
 
     public void getLessonsFromDB(){
-         CountDownLatch done = new CountDownLatch(1);
+
         myRef.addValueEventListener(new ValueEventListener() {
 
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-               for(int i =0; i<list.size(); i++){
-                   if(!lessons.isEmpty()) break;
-                   LessonObj t = dataSnapshot.child(list.get(i)).getValue(LessonObj.class);
-                   lessons.add(t);
+                if(lessons.size()==0){
+                    for(int i =0; i<list.size(); i++){
+                        LessonObj t = dataSnapshot.child(list.get(i)).getValue(LessonObj.class);
+                        lessons.add(t);
 
-               }
-               isQueryingFinished = true;
-               done.countDown();
+                    }
+                }
+
+
             }
             @Override
             public void onCancelled(DatabaseError databaseError) {
@@ -174,11 +130,15 @@ public class customAdapter extends BaseAdapter implements ListAdapter {
 
         });
 
-//        try {
-//            done.await(); //it will wait till the response is received from firebase.
-//        } catch(InterruptedException e) {
-//            e.printStackTrace();
-//        }
+    }
+    public boolean isRefreshed(){
+        getLessonsFromDB();
+        if(list.size()==lessons.size()){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 
 }
