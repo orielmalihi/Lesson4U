@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/booksback"
+    tools:context=".LessonDetailsActivity">
+
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="191dp"
+        android:layout_height="134dp"
+        app:layout_constraintBottom_toTopOf="@+id/tvTeacherName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo_white_background" />
+
+    <TextView
+        android:id="@+id/tvTeacherName"
+        android:layout_width="230dp"
+        android:layout_height="25dp"
+        android:text="Name of Teacher"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvSubject"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvSubject"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.829" />
+
+    <TextView
+        android:id="@+id/tvSubject"
+        android:layout_width="225dp"
+        android:layout_height="35dp"
+        android:layout_marginBottom="64dp"
+        android:text="subject"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvTime"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.908" />
+
+    <TextView
+        android:id="@+id/tvLevel"
+        android:layout_width="231dp"
+        android:layout_height="32dp"
+        android:text="level"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvTime"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.018"
+        app:layout_constraintStart_toStartOf="@+id/tvSubject"
+        app:layout_constraintTop_toBottomOf="@+id/tvTeacherName"
+        app:layout_constraintVertical_bias="0.88" />
+
+    <Button
+        android:id="@+id/bChoose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="choose this class"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.837" />
+
+    <TextView
+        android:id="@+id/pp"
+        android:layout_width="220dp"
+        android:layout_height="27dp"
+        android:text="price"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/bChoose"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvTime"
+        app:layout_constraintTop_toBottomOf="@+id/tvTime"
+        app:layout_constraintVertical_bias="0.298" />
+
+    <TextView
+        android:id="@+id/tvTime"
+        android:layout_width="227dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginBottom="144dp"
+        android:text="time"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/bChoose"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvSubject"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.856" />
+</androidx.constraintlayout.widget.ConstraintLayout>

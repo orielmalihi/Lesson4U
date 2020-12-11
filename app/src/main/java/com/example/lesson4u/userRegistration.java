@@ -73,7 +73,7 @@ public class userRegistration extends AppCompatActivity implements View.OnClickL
                 startActivity(intent);
                 finish();
             } else if (type.equals("teacher")) {
-                //ArrayList<LessonObj> emptyList = new ArrayList<LessonObj>();
+
                 FirebaseTeacher.writeNewTeacher(auth.getUid(), auth.getCurrentUser().getEmail(), phoneNumber, fName,
                         lName, _city);
                 Intent intent = new Intent(this, MainActivity.class);

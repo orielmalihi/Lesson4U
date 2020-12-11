@@ -9,14 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Lesson4U">
-        <activity android:name=".LessonResults"></activity>
-        <activity android:name=".SearchForLessonsActivity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".LessonDetailsActivity"></activity>
+        <activity android:name=".LessonResults" />
+        <activity android:name=".SearchForLessonsActivity" />
         <activity android:name=".AddLessonActivity" />
         <activity android:name=".ScheduledLessonsActivity" />
         <activity android:name=".ProfileActivity" />

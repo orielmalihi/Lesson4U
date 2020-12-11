@@ -1,9 +1,12 @@
 package com.example.lesson4u;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.io.Serializable;
 import java.util.Objects;
 
-public class LessonObj {
+public class LessonObj implements Parcelable {
     private String teacherUID;
     private String subject;
     private String level;
@@ -29,6 +32,28 @@ public class LessonObj {
         this.time = time;
     }
 
+
+    protected LessonObj(Parcel in) {
+        teacherUID = in.readString();
+        subject = in.readString();
+        level = in.readString();
+        price = in.readInt();
+        date = in.readString();
+        time = in.readString();
+        isScheduled = false;
+    }
+
+    public static final Creator<LessonObj> CREATOR = new Creator<LessonObj>() {
+        @Override
+        public LessonObj createFromParcel(Parcel in) {
+            return new LessonObj(in);
+        }
+
+        @Override
+        public LessonObj[] newArray(int size) {
+            return new LessonObj[size];
+        }
+    };
 
     public String getTeacherUID() {
         return teacherUID;
@@ -92,6 +117,20 @@ public class LessonObj {
                 time.equals(lessonObj.time);
     }
 
+    @Override
+    public int describeContents() {
+        return this.hashCode();
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(teacherUID);
+        dest.writeString(subject);
+        dest.writeString(level);
+        dest.writeInt(price);
+        dest.writeString(date);
+        dest.writeString(time);
+    }
 }
 
 

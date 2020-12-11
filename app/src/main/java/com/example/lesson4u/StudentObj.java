@@ -3,7 +3,9 @@ package com.example.lesson4u;
 import android.text.Editable;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 
 public class StudentObj {
     private String email;
@@ -11,7 +13,8 @@ public class StudentObj {
     private String lastName;
     private String phoneNum;
     private String city;
-    private ArrayList<LessonObj> lessons;
+    private List<String> lessons;
+
 
 
     public StudentObj(){}
@@ -22,7 +25,9 @@ public class StudentObj {
         this.firstName = fname;
         this.lastName = lname;
         this.phoneNum = phone;
-        lessons = new ArrayList<>(); // scheduled lessons
+
+        lessons = new ArrayList<>();
+
     }
 
 
@@ -66,13 +71,13 @@ public class StudentObj {
         this.city = city;
     }
 
-    public ArrayList<LessonObj> getLessons() { return lessons;  }
-
-    public void addLesson(ArrayList<LessonObj> lessons, LessonObj lesson) {
-        lessons.add(lesson);
-    }
-    boolean removeLesson(LessonObj lesson) {
-        return(lessons.remove(lesson));
-    }
+//    public ArrayList<LessonObj> getLessons() { return lessons;  }
+//
+    public void addLesson(LessonObj lesson) {
+//        lessons.add(lesson);
+   }
+//    boolean removeLesson(LessonObj lesson) {
+//        return(lessons.remove(lesson));
+//    }
 
 }

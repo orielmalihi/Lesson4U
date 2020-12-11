@@ -1,18 +1,14 @@
 package com.example.lesson4u;
 
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
 
 public class TeacherObj {
-    private String userID;
     private String email;
     private String firstName;
     private String lastName;
     private String phoneNum;
     private String city;
-    private ArrayList<LessonObj> lessons;
+    //private ArrayList<LessonObj> lessons;
 
 
 
@@ -24,7 +20,7 @@ public class TeacherObj {
         this.firstName = fname;
         this.lastName = lname;
         this.phoneNum = phone;
-        this.lessons = new ArrayList<LessonObj>(); // only scheduled lessons
+        //this.lessons = new ArrayList<LessonObj>(); // only scheduled lessons
     }
 
 
@@ -47,10 +43,10 @@ public class TeacherObj {
     public String getCity() {
         return city;
     }
-
-    public ArrayList<LessonObj> getLessons() {
-        return lessons;
-    }
+//
+//    public ArrayList<LessonObj> getLessons() {
+//        return lessons;
+//    }
 
     public void setEmail(String email) {
         this.email = email;
@@ -71,16 +67,16 @@ public class TeacherObj {
     public void setCity(String city) {
         this.city = city;
     }
-
-    public void addLesson(LessonObj lesson) {
-        lessons.add(lesson);
-    }
-    /*
-    Remove lesson if past or cancelled
-     */
-    boolean removeLesson(LessonObj lesson) {
-        return(lessons.remove(lesson));
-    }
+//
+//    public void addLesson(LessonObj lesson) {
+//        lessons.add(lesson);
+//    }
+//    /*
+//    Remove lesson if past or cancelled
+//     */
+//    boolean removeLesson(LessonObj lesson) {
+//        return(lessons.remove(lesson));
+//    }
 
 
 }
