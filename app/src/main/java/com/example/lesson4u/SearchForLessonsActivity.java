@@ -87,6 +87,7 @@ public class SearchForLessonsActivity extends AppCompatActivity {
                                     }
                                 }
                                 Intent intent = new Intent(getApplicationContext(), LessonResults.class);
+                                intent.putExtra("MatchedLessons", MatchedLessons);
                                 startActivity(intent);
                             }
                             @Override
