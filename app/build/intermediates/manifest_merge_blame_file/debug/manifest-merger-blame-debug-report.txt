@@ -6,152 +6,152 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="16"
-8-->C:\Users\Daniel\Documents\uni\semester_5\software engineering\Lesson4U\app\src\main\AndroidManifest.xml
+8-->C:\Users\oriel\AndroidStudioProjects\Lesson4U\app\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="30" />
-9-->C:\Users\Daniel\Documents\uni\semester_5\software engineering\Lesson4U\app\src\main\AndroidManifest.xml
+9-->C:\Users\oriel\AndroidStudioProjects\Lesson4U\app\src\main\AndroidManifest.xml
 10
 11    <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
 12    <!-- <uses-sdk android:minSdkVersion="14"/> -->
 13    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-13-->[com.google.firebase:firebase-database:19.2.1] C:\Users\Daniel\.gradle\caches\transforms-2\files-2.1\8afc96a6fe81e71aa883641e47cb94f7\jetified-firebase-database-19.2.1\AndroidManifest.xml:25:5-79
-13-->[com.google.firebase:firebase-database:19.2.1] C:\Users\Daniel\.gradle\caches\transforms-2\files-2.1\8afc96a6fe81e71aa883641e47cb94f7\jetified-firebase-database-19.2.1\AndroidManifest.xml:25:22-76
+13-->[com.google.firebase:firebase-database:19.2.1] C:\Users\oriel\.gradle\caches\transforms-2\files-2.1\8afc96a6fe81e71aa883641e47cb94f7\jetified-firebase-database-19.2.1\AndroidManifest.xml:25:5-79
+13-->[com.google.firebase:firebase-database:19.2.1] C:\Users\oriel\.gradle\caches\transforms-2\files-2.1\8afc96a6fe81e71aa883641e47cb94f7\jetified-firebase-database-19.2.1\AndroidManifest.xml:25:22-76
 14    <uses-permission android:name="android.permission.INTERNET" />
-14-->[com.google.firebase:firebase-database:19.2.1] C:\Users\Daniel\.gradle\caches\transforms-2\files-2.1\8afc96a6fe81e71aa883641e47cb94f7\jetified-firebase-database-19.2.1\AndroidManifest.xml:26:5-67
-14-->[com.google.firebase:firebase-database:19.2.1] C:\Users\Daniel\.gradle\caches\transforms-2\files-2.1\8afc96a6fe81e71aa883641e47cb94f7\jetified-firebase-database-19.2.1\AndroidManifest.xml:26:22-64
+14-->[com.google.firebase:firebase-database:19.2.1] C:\Users\oriel\.gradle\caches\transforms-2\files-2.1\8afc96a6fe81e71aa883641e47cb94f7\jetified-firebase-database-19.2.1\AndroidManifest.xml:26:5-67
+14-->[com.google.firebase:firebase-database:19.2.1] C:\Users\oriel\.gradle\caches\transforms-2\files-2.1\8afc96a6fe81e71aa883641e47cb94f7\jetified-firebase-database-19.2.1\AndroidManifest.xml:26:22-64
 15
 16    <application
-16-->C:\Users\Daniel\Documents\uni\semester_5\software engineering\Lesson4U\app\src\main\AndroidManifest.xml:5:5-33:19
+16-->C:\Users\oriel\AndroidStudioProjects\Lesson4U\app\src\main\AndroidManifest.xml:5:5-34:19
 17        android:allowBackup="true"
-17-->C:\Users\Daniel\Documents\uni\semester_5\software engineering\Lesson4U\app\src\main\AndroidManifest.xml:6:9-35
+17-->C:\Users\oriel\AndroidStudioProjects\Lesson4U\app\src\main\AndroidManifest.xml:6:9-35
 18        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-18-->[androidx.core:core:1.1.0] C:\Users\Daniel\.gradle\caches\transforms-2\files-2.1\241ed957067c6e64de29ec08090d8118\core-1.1.0\AndroidManifest.xml:24:18-86
+18-->[androidx.core:core:1.1.0] C:\Users\oriel\.gradle\caches\transforms-2\files-2.1\241ed957067c6e64de29ec08090d8118\core-1.1.0\AndroidManifest.xml:24:18-86
 19        android:debuggable="true"
 20        android:icon="@mipmap/ic_launcher"
-20-->C:\Users\Daniel\Documents\uni\semester_5\software engineering\Lesson4U\app\src\main\AndroidManifest.xml:7:9-43
+20-->C:\Users\oriel\AndroidStudioProjects\Lesson4U\app\src\main\AndroidManifest.xml:7:9-43
 21        android:label="@string/app_name"
-21-->C:\Users\Daniel\Documents\uni\semester_5\software engineering\Lesson4U\app\src\main\AndroidManifest.xml:8:9-41
+21-->C:\Users\oriel\AndroidStudioProjects\Lesson4U\app\src\main\AndroidManifest.xml:8:9-41
 22        android:roundIcon="@mipmap/ic_launcher_round"
-22-->C:\Users\Daniel\Documents\uni\semester_5\software engineering\Lesson4U\app\src\main\AndroidManifest.xml:9:9-54
+22-->C:\Users\oriel\AndroidStudioProjects\Lesson4U\app\src\main\AndroidManifest.xml:9:9-54
 23        android:supportsRtl="true"
-23-->C:\Users\Daniel\Documents\uni\semester_5\software engineering\Lesson4U\app\src\main\AndroidManifest.xml:10:9-35
+23-->C:\Users\oriel\AndroidStudioProjects\Lesson4U\app\src\main\AndroidManifest.xml:10:9-35
 24        android:testOnly="true"
 25        android:theme="@style/Theme.Lesson4U" >
-25-->C:\Users\Daniel\Documents\uni\semester_5\software engineering\Lesson4U\app\src\main\AndroidManifest.xml:11:9-46
+25-->C:\Users\oriel\AndroidStudioProjects\Lesson4U\app\src\main\AndroidManifest.xml:11:9-46
 26        <activity android:name="com.example.lesson4u.LessonDetailsActivity" />
-26-->C:\Users\Daniel\Documents\uni\semester_5\software engineering\Lesson4U\app\src\main\AndroidManifest.xml:12:9-68
-26-->C:\Users\Daniel\Documents\uni\semester_5\software engineering\Lesson4U\app\src\main\AndroidManifest.xml:12:19-56
+26-->C:\Users\oriel\AndroidStudioProjects\Lesson4U\app\src\main\AndroidManifest.xml:13:9-68
+26-->C:\Users\oriel\AndroidStudioProjects\Lesson4U\app\src\main\AndroidManifest.xml:13:19-56
 27        <activity android:name="com.example.lesson4u.LessonResults" />
-27-->C:\Users\Daniel\Documents\uni\semester_5\software engineering\Lesson4U\app\src\main\AndroidManifest.xml:13:9-51
-27-->C:\Users\Daniel\Documents\uni\semester_5\software engineering\Lesson4U\app\src\main\AndroidManifest.xml:13:19-48
+27-->C:\Users\oriel\AndroidStudioProjects\Lesson4U\app\src\main\AndroidManifest.xml:14:9-51
+27-->C:\Users\oriel\AndroidStudioProjects\Lesson4U\app\src\main\AndroidManifest.xml:14:19-48
 28        <activity android:name="com.example.lesson4u.SearchForLessonsActivity" />
-28-->C:\Users\Daniel\Documents\uni\semester_5\software engineering\Lesson4U\app\src\main\AndroidManifest.xml:14:9-62
-28-->C:\Users\Daniel\Documents\uni\semester_5\software engineering\Lesson4U\app\src\main\AndroidManifest.xml:14:19-59
+28-->C:\Users\oriel\AndroidStudioProjects\Lesson4U\app\src\main\AndroidManifest.xml:15:9-62
+28-->C:\Users\oriel\AndroidStudioProjects\Lesson4U\app\src\main\AndroidManifest.xml:15:19-59
 29        <activity android:name="com.example.lesson4u.AddLessonActivity" />
-29-->C:\Users\Daniel\Documents\uni\semester_5\software engineering\Lesson4U\app\src\main\AndroidManifest.xml:15:9-55
-29-->C:\Users\Daniel\Documents\uni\semester_5\software engineering\Lesson4U\app\src\main\AndroidManifest.xml:15:19-52
+29-->C:\Users\oriel\AndroidStudioProjects\Lesson4U\app\src\main\AndroidManifest.xml:16:9-55
+29-->C:\Users\oriel\AndroidStudioProjects\Lesson4U\app\src\main\AndroidManifest.xml:16:19-52
 30        <activity android:name="com.example.lesson4u.ScheduledLessonsActivity" />
-30-->C:\Users\Daniel\Documents\uni\semester_5\software engineering\Lesson4U\app\src\main\AndroidManifest.xml:16:9-62
-30-->C:\Users\Daniel\Documents\uni\semester_5\software engineering\Lesson4U\app\src\main\AndroidManifest.xml:16:19-59
+30-->C:\Users\oriel\AndroidStudioProjects\Lesson4U\app\src\main\AndroidManifest.xml:17:9-62
+30-->C:\Users\oriel\AndroidStudioProjects\Lesson4U\app\src\main\AndroidManifest.xml:17:19-59
 31        <activity android:name="com.example.lesson4u.ProfileActivity" />
-31-->C:\Users\Daniel\Documents\uni\semester_5\software engineering\Lesson4U\app\src\main\AndroidManifest.xml:17:9-53
-31-->C:\Users\Daniel\Documents\uni\semester_5\software engineering\Lesson4U\app\src\main\AndroidManifest.xml:17:19-50
+31-->C:\Users\oriel\AndroidStudioProjects\Lesson4U\app\src\main\AndroidManifest.xml:18:9-53
+31-->C:\Users\oriel\AndroidStudioProjects\Lesson4U\app\src\main\AndroidManifest.xml:18:19-50
 32        <activity android:name="com.example.lesson4u.userRegistration" />
-32-->C:\Users\Daniel\Documents\uni\semester_5\software engineering\Lesson4U\app\src\main\AndroidManifest.xml:18:9-54
-32-->C:\Users\Daniel\Documents\uni\semester_5\software engineering\Lesson4U\app\src\main\AndroidManifest.xml:18:19-51
+32-->C:\Users\oriel\AndroidStudioProjects\Lesson4U\app\src\main\AndroidManifest.xml:19:9-54
+32-->C:\Users\oriel\AndroidStudioProjects\Lesson4U\app\src\main\AndroidManifest.xml:19:19-51
 33        <activity android:name="com.example.lesson4u.LoginOrRegister" />
-33-->C:\Users\Daniel\Documents\uni\semester_5\software engineering\Lesson4U\app\src\main\AndroidManifest.xml:19:9-53
-33-->C:\Users\Daniel\Documents\uni\semester_5\software engineering\Lesson4U\app\src\main\AndroidManifest.xml:19:19-50
+33-->C:\Users\oriel\AndroidStudioProjects\Lesson4U\app\src\main\AndroidManifest.xml:20:9-53
+33-->C:\Users\oriel\AndroidStudioProjects\Lesson4U\app\src\main\AndroidManifest.xml:20:19-50
 34        <activity android:name="com.example.lesson4u.RegisterActivity" />
-34-->C:\Users\Daniel\Documents\uni\semester_5\software engineering\Lesson4U\app\src\main\AndroidManifest.xml:20:9-54
-34-->C:\Users\Daniel\Documents\uni\semester_5\software engineering\Lesson4U\app\src\main\AndroidManifest.xml:20:19-51
+34-->C:\Users\oriel\AndroidStudioProjects\Lesson4U\app\src\main\AndroidManifest.xml:21:9-54
+34-->C:\Users\oriel\AndroidStudioProjects\Lesson4U\app\src\main\AndroidManifest.xml:21:19-51
 35        <activity android:name="com.example.lesson4u.LoginActivity" />
-35-->C:\Users\Daniel\Documents\uni\semester_5\software engineering\Lesson4U\app\src\main\AndroidManifest.xml:21:9-51
-35-->C:\Users\Daniel\Documents\uni\semester_5\software engineering\Lesson4U\app\src\main\AndroidManifest.xml:21:19-48
+35-->C:\Users\oriel\AndroidStudioProjects\Lesson4U\app\src\main\AndroidManifest.xml:22:9-51
+35-->C:\Users\oriel\AndroidStudioProjects\Lesson4U\app\src\main\AndroidManifest.xml:22:19-48
 36        <activity android:name="com.example.lesson4u.MainActivity" >
-36-->C:\Users\Daniel\Documents\uni\semester_5\software engineering\Lesson4U\app\src\main\AndroidManifest.xml:22:9-28:20
-36-->C:\Users\Daniel\Documents\uni\semester_5\software engineering\Lesson4U\app\src\main\AndroidManifest.xml:22:19-47
+36-->C:\Users\oriel\AndroidStudioProjects\Lesson4U\app\src\main\AndroidManifest.xml:23:9-29:20
+36-->C:\Users\oriel\AndroidStudioProjects\Lesson4U\app\src\main\AndroidManifest.xml:23:19-47
 37            <intent-filter>
-37-->C:\Users\Daniel\Documents\uni\semester_5\software engineering\Lesson4U\app\src\main\AndroidManifest.xml:23:13-27:29
+37-->C:\Users\oriel\AndroidStudioProjects\Lesson4U\app\src\main\AndroidManifest.xml:24:13-28:29
 38                <action android:name="android.intent.action.MAIN" />
-38-->C:\Users\Daniel\Documents\uni\semester_5\software engineering\Lesson4U\app\src\main\AndroidManifest.xml:24:17-69
-38-->C:\Users\Daniel\Documents\uni\semester_5\software engineering\Lesson4U\app\src\main\AndroidManifest.xml:24:25-66
+38-->C:\Users\oriel\AndroidStudioProjects\Lesson4U\app\src\main\AndroidManifest.xml:25:17-69
+38-->C:\Users\oriel\AndroidStudioProjects\Lesson4U\app\src\main\AndroidManifest.xml:25:25-66
 39
 40                <category android:name="android.intent.category.LAUNCHER" />
-40-->C:\Users\Daniel\Documents\uni\semester_5\software engineering\Lesson4U\app\src\main\AndroidManifest.xml:26:17-77
-40-->C:\Users\Daniel\Documents\uni\semester_5\software engineering\Lesson4U\app\src\main\AndroidManifest.xml:26:27-74
+40-->C:\Users\oriel\AndroidStudioProjects\Lesson4U\app\src\main\AndroidManifest.xml:27:17-77
+40-->C:\Users\oriel\AndroidStudioProjects\Lesson4U\app\src\main\AndroidManifest.xml:27:27-74
 41            </intent-filter>
 42        </activity>
 43
 44        <meta-data
-44-->C:\Users\Daniel\Documents\uni\semester_5\software engineering\Lesson4U\app\src\main\AndroidManifest.xml:30:9-32:57
+44-->C:\Users\oriel\AndroidStudioProjects\Lesson4U\app\src\main\AndroidManifest.xml:31:9-33:57
 45            android:name="preloaded_fonts"
-45-->C:\Users\Daniel\Documents\uni\semester_5\software engineering\Lesson4U\app\src\main\AndroidManifest.xml:31:13-43
+45-->C:\Users\oriel\AndroidStudioProjects\Lesson4U\app\src\main\AndroidManifest.xml:32:13-43
 46            android:resource="@array/preloaded_fonts" />
-46-->C:\Users\Daniel\Documents\uni\semester_5\software engineering\Lesson4U\app\src\main\AndroidManifest.xml:32:13-54
+46-->C:\Users\oriel\AndroidStudioProjects\Lesson4U\app\src\main\AndroidManifest.xml:33:13-54
 47
 48        <service
-48-->[com.google.firebase:firebase-database:19.2.1] C:\Users\Daniel\.gradle\caches\transforms-2\files-2.1\8afc96a6fe81e71aa883641e47cb94f7\jetified-firebase-database-19.2.1\AndroidManifest.xml:29:9-35:19
+48-->[com.google.firebase:firebase-database:19.2.1] C:\Users\oriel\.gradle\caches\transforms-2\files-2.1\8afc96a6fe81e71aa883641e47cb94f7\jetified-firebase-database-19.2.1\AndroidManifest.xml:29:9-35:19
 49            android:name="com.google.firebase.components.ComponentDiscoveryService"
-49-->[com.google.firebase:firebase-database:19.2.1] C:\Users\Daniel\.gradle\caches\transforms-2\files-2.1\8afc96a6fe81e71aa883641e47cb94f7\jetified-firebase-database-19.2.1\AndroidManifest.xml:30:13-84
+49-->[com.google.firebase:firebase-database:19.2.1] C:\Users\oriel\.gradle\caches\transforms-2\files-2.1\8afc96a6fe81e71aa883641e47cb94f7\jetified-firebase-database-19.2.1\AndroidManifest.xml:30:13-84
 50            android:directBootAware="true"
-50-->[com.google.firebase:firebase-common:19.3.0] C:\Users\Daniel\.gradle\caches\transforms-2\files-2.1\8943e119dd000749d2be6380c4fc0772\jetified-firebase-common-19.3.0\AndroidManifest.xml:34:13-43
+50-->[com.google.firebase:firebase-common:19.3.0] C:\Users\oriel\.gradle\caches\transforms-2\files-2.1\8943e119dd000749d2be6380c4fc0772\jetified-firebase-common-19.3.0\AndroidManifest.xml:34:13-43
 51            android:exported="false" >
-51-->[com.google.firebase:firebase-database:19.2.1] C:\Users\Daniel\.gradle\caches\transforms-2\files-2.1\8afc96a6fe81e71aa883641e47cb94f7\jetified-firebase-database-19.2.1\AndroidManifest.xml:31:13-37
+51-->[com.google.firebase:firebase-database:19.2.1] C:\Users\oriel\.gradle\caches\transforms-2\files-2.1\8afc96a6fe81e71aa883641e47cb94f7\jetified-firebase-database-19.2.1\AndroidManifest.xml:31:13-37
 52            <meta-data
-52-->[com.google.firebase:firebase-database:19.2.1] C:\Users\Daniel\.gradle\caches\transforms-2\files-2.1\8afc96a6fe81e71aa883641e47cb94f7\jetified-firebase-database-19.2.1\AndroidManifest.xml:32:13-34:85
+52-->[com.google.firebase:firebase-database:19.2.1] C:\Users\oriel\.gradle\caches\transforms-2\files-2.1\8afc96a6fe81e71aa883641e47cb94f7\jetified-firebase-database-19.2.1\AndroidManifest.xml:32:13-34:85
 53                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
-53-->[com.google.firebase:firebase-database:19.2.1] C:\Users\Daniel\.gradle\caches\transforms-2\files-2.1\8afc96a6fe81e71aa883641e47cb94f7\jetified-firebase-database-19.2.1\AndroidManifest.xml:33:17-109
+53-->[com.google.firebase:firebase-database:19.2.1] C:\Users\oriel\.gradle\caches\transforms-2\files-2.1\8afc96a6fe81e71aa883641e47cb94f7\jetified-firebase-database-19.2.1\AndroidManifest.xml:33:17-109
 54                android:value="com.google.firebase.components.ComponentRegistrar" />
-54-->[com.google.firebase:firebase-database:19.2.1] C:\Users\Daniel\.gradle\caches\transforms-2\files-2.1\8afc96a6fe81e71aa883641e47cb94f7\jetified-firebase-database-19.2.1\AndroidManifest.xml:34:17-82
+54-->[com.google.firebase:firebase-database:19.2.1] C:\Users\oriel\.gradle\caches\transforms-2\files-2.1\8afc96a6fe81e71aa883641e47cb94f7\jetified-firebase-database-19.2.1\AndroidManifest.xml:34:17-82
 55            <meta-data
-55-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\Daniel\.gradle\caches\transforms-2\files-2.1\6a6f50ab289d2fdb8574059413c20127\jetified-firebase-auth-19.3.1\AndroidManifest.xml:36:13-38:85
+55-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\oriel\.gradle\caches\transforms-2\files-2.1\6a6f50ab289d2fdb8574059413c20127\jetified-firebase-auth-19.3.1\AndroidManifest.xml:36:13-38:85
 56                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
-56-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\Daniel\.gradle\caches\transforms-2\files-2.1\6a6f50ab289d2fdb8574059413c20127\jetified-firebase-auth-19.3.1\AndroidManifest.xml:37:17-109
+56-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\oriel\.gradle\caches\transforms-2\files-2.1\6a6f50ab289d2fdb8574059413c20127\jetified-firebase-auth-19.3.1\AndroidManifest.xml:37:17-109
 57                android:value="com.google.firebase.components.ComponentRegistrar" />
-57-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\Daniel\.gradle\caches\transforms-2\files-2.1\6a6f50ab289d2fdb8574059413c20127\jetified-firebase-auth-19.3.1\AndroidManifest.xml:38:17-82
+57-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\oriel\.gradle\caches\transforms-2\files-2.1\6a6f50ab289d2fdb8574059413c20127\jetified-firebase-auth-19.3.1\AndroidManifest.xml:38:17-82
 58        </service>
 59
 60        <activity
-60-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\Daniel\.gradle\caches\transforms-2\files-2.1\6a6f50ab289d2fdb8574059413c20127\jetified-firebase-auth-19.3.1\AndroidManifest.xml:24:9-31:50
+60-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\oriel\.gradle\caches\transforms-2\files-2.1\6a6f50ab289d2fdb8574059413c20127\jetified-firebase-auth-19.3.1\AndroidManifest.xml:24:9-31:50
 61            android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
-61-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\Daniel\.gradle\caches\transforms-2\files-2.1\6a6f50ab289d2fdb8574059413c20127\jetified-firebase-auth-19.3.1\AndroidManifest.xml:25:13-85
+61-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\oriel\.gradle\caches\transforms-2\files-2.1\6a6f50ab289d2fdb8574059413c20127\jetified-firebase-auth-19.3.1\AndroidManifest.xml:25:13-85
 62            android:excludeFromRecents="true"
-62-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\Daniel\.gradle\caches\transforms-2\files-2.1\6a6f50ab289d2fdb8574059413c20127\jetified-firebase-auth-19.3.1\AndroidManifest.xml:26:13-46
+62-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\oriel\.gradle\caches\transforms-2\files-2.1\6a6f50ab289d2fdb8574059413c20127\jetified-firebase-auth-19.3.1\AndroidManifest.xml:26:13-46
 63            android:exported="true"
-63-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\Daniel\.gradle\caches\transforms-2\files-2.1\6a6f50ab289d2fdb8574059413c20127\jetified-firebase-auth-19.3.1\AndroidManifest.xml:27:13-36
+63-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\oriel\.gradle\caches\transforms-2\files-2.1\6a6f50ab289d2fdb8574059413c20127\jetified-firebase-auth-19.3.1\AndroidManifest.xml:27:13-36
 64            android:launchMode="singleTask"
-64-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\Daniel\.gradle\caches\transforms-2\files-2.1\6a6f50ab289d2fdb8574059413c20127\jetified-firebase-auth-19.3.1\AndroidManifest.xml:28:13-44
+64-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\oriel\.gradle\caches\transforms-2\files-2.1\6a6f50ab289d2fdb8574059413c20127\jetified-firebase-auth-19.3.1\AndroidManifest.xml:28:13-44
 65            android:permission="com.google.firebase.auth.api.gms.permission.LAUNCH_FEDERATED_SIGN_IN"
-65-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\Daniel\.gradle\caches\transforms-2\files-2.1\6a6f50ab289d2fdb8574059413c20127\jetified-firebase-auth-19.3.1\AndroidManifest.xml:29:13-102
+65-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\oriel\.gradle\caches\transforms-2\files-2.1\6a6f50ab289d2fdb8574059413c20127\jetified-firebase-auth-19.3.1\AndroidManifest.xml:29:13-102
 66            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-66-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\Daniel\.gradle\caches\transforms-2\files-2.1\6a6f50ab289d2fdb8574059413c20127\jetified-firebase-auth-19.3.1\AndroidManifest.xml:30:13-72
+66-->[com.google.firebase:firebase-auth:19.3.1] C:\Users\oriel\.gradle\caches\transforms-2\files-2.1\6a6f50ab289d2fdb8574059413c20127\jetified-firebase-auth-19.3.1\AndroidManifest.xml:30:13-72
 67
 68        <provider
-68-->[com.google.firebase:firebase-common:19.3.0] C:\Users\Daniel\.gradle\caches\transforms-2\files-2.1\8943e119dd000749d2be6380c4fc0772\jetified-firebase-common-19.3.0\AndroidManifest.xml:26:9-30:39
+68-->[com.google.firebase:firebase-common:19.3.0] C:\Users\oriel\.gradle\caches\transforms-2\files-2.1\8943e119dd000749d2be6380c4fc0772\jetified-firebase-common-19.3.0\AndroidManifest.xml:26:9-30:39
 69            android:name="com.google.firebase.provider.FirebaseInitProvider"
-69-->[com.google.firebase:firebase-common:19.3.0] C:\Users\Daniel\.gradle\caches\transforms-2\files-2.1\8943e119dd000749d2be6380c4fc0772\jetified-firebase-common-19.3.0\AndroidManifest.xml:27:13-77
+69-->[com.google.firebase:firebase-common:19.3.0] C:\Users\oriel\.gradle\caches\transforms-2\files-2.1\8943e119dd000749d2be6380c4fc0772\jetified-firebase-common-19.3.0\AndroidManifest.xml:27:13-77
 70            android:authorities="com.example.lesson4u.firebaseinitprovider"
-70-->[com.google.firebase:firebase-common:19.3.0] C:\Users\Daniel\.gradle\caches\transforms-2\files-2.1\8943e119dd000749d2be6380c4fc0772\jetified-firebase-common-19.3.0\AndroidManifest.xml:28:13-72
+70-->[com.google.firebase:firebase-common:19.3.0] C:\Users\oriel\.gradle\caches\transforms-2\files-2.1\8943e119dd000749d2be6380c4fc0772\jetified-firebase-common-19.3.0\AndroidManifest.xml:28:13-72
 71            android:exported="false"
-71-->[com.google.firebase:firebase-common:19.3.0] C:\Users\Daniel\.gradle\caches\transforms-2\files-2.1\8943e119dd000749d2be6380c4fc0772\jetified-firebase-common-19.3.0\AndroidManifest.xml:29:13-37
+71-->[com.google.firebase:firebase-common:19.3.0] C:\Users\oriel\.gradle\caches\transforms-2\files-2.1\8943e119dd000749d2be6380c4fc0772\jetified-firebase-common-19.3.0\AndroidManifest.xml:29:13-37
 72            android:initOrder="100" />
-72-->[com.google.firebase:firebase-common:19.3.0] C:\Users\Daniel\.gradle\caches\transforms-2\files-2.1\8943e119dd000749d2be6380c4fc0772\jetified-firebase-common-19.3.0\AndroidManifest.xml:30:13-36
+72-->[com.google.firebase:firebase-common:19.3.0] C:\Users\oriel\.gradle\caches\transforms-2\files-2.1\8943e119dd000749d2be6380c4fc0772\jetified-firebase-common-19.3.0\AndroidManifest.xml:30:13-36
 73
 74        <activity
-74-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Daniel\.gradle\caches\transforms-2\files-2.1\d92a27efcac738b4f280b9ad0c07bda7\jetified-play-services-base-17.1.0\AndroidManifest.xml:23:9-26:75
+74-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\oriel\.gradle\caches\transforms-2\files-2.1\d92a27efcac738b4f280b9ad0c07bda7\jetified-play-services-base-17.1.0\AndroidManifest.xml:23:9-26:75
 75            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-75-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Daniel\.gradle\caches\transforms-2\files-2.1\d92a27efcac738b4f280b9ad0c07bda7\jetified-play-services-base-17.1.0\AndroidManifest.xml:24:13-79
+75-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\oriel\.gradle\caches\transforms-2\files-2.1\d92a27efcac738b4f280b9ad0c07bda7\jetified-play-services-base-17.1.0\AndroidManifest.xml:24:13-79
 76            android:exported="false"
-76-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Daniel\.gradle\caches\transforms-2\files-2.1\d92a27efcac738b4f280b9ad0c07bda7\jetified-play-services-base-17.1.0\AndroidManifest.xml:25:13-37
+76-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\oriel\.gradle\caches\transforms-2\files-2.1\d92a27efcac738b4f280b9ad0c07bda7\jetified-play-services-base-17.1.0\AndroidManifest.xml:25:13-37
 77            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-77-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Daniel\.gradle\caches\transforms-2\files-2.1\d92a27efcac738b4f280b9ad0c07bda7\jetified-play-services-base-17.1.0\AndroidManifest.xml:26:13-72
+77-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\oriel\.gradle\caches\transforms-2\files-2.1\d92a27efcac738b4f280b9ad0c07bda7\jetified-play-services-base-17.1.0\AndroidManifest.xml:26:13-72
 78
 79        <meta-data
-79-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\Daniel\.gradle\caches\transforms-2\files-2.1\c03ff831f337462821d0a5c03495569e\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
+79-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\oriel\.gradle\caches\transforms-2\files-2.1\c03ff831f337462821d0a5c03495569e\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
 80            android:name="com.google.android.gms.version"
-80-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\Daniel\.gradle\caches\transforms-2\files-2.1\c03ff831f337462821d0a5c03495569e\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
+80-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\oriel\.gradle\caches\transforms-2\files-2.1\c03ff831f337462821d0a5c03495569e\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
 81            android:value="@integer/google_play_services_version" />
-81-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\Daniel\.gradle\caches\transforms-2\files-2.1\c03ff831f337462821d0a5c03495569e\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
+81-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\oriel\.gradle\caches\transforms-2\files-2.1\c03ff831f337462821d0a5c03495569e\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
 82    </application>
 83
 84</manifest>

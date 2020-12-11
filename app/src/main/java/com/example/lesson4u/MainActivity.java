@@ -26,7 +26,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     final String TAG = "MainActivity";
     SharedPreferences sp;
     Button logout;
-    Button refresh;
     Button profile;
     Button dynamic;
     Button scheduledLessons;
@@ -64,13 +63,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 //            Toast.makeText(this, "Already logged in", Toast.LENGTH_LONG).show();
             logout = findViewById(R.id.button3);
-            refresh = findViewById(R.id.button4);
             welcome = findViewById(R.id.textView);
             profile = findViewById(R.id.profilebt);
             dynamic = findViewById(R.id.dinamicBt);
             scheduledLessons = findViewById(R.id.scheduledLessonsBt);
             logout.setOnClickListener(this);
-            refresh.setOnClickListener(this);
             profile.setOnClickListener(this);
             dynamic.setOnClickListener(this);
             scheduledLessons.setOnClickListener(this);

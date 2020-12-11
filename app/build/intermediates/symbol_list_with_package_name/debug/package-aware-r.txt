@@ -48,6 +48,7 @@ animator mtrl_fab_transformation_sheet_expand_spec
 array com_google_android_gms_fonts_certs
 array com_google_android_gms_fonts_certs_dev
 array com_google_android_gms_fonts_certs_prod
+array hours
 array preloaded_fonts
 array subj_levels
 array subjects
@@ -1446,7 +1447,6 @@ id CTRL
 id DateSearch
 id FUNCTION
 id First_name
-id FromTime
 id Last_name
 id LessonDate
 id LessonPrice
@@ -1458,7 +1458,6 @@ id SearchButton
 id Subject
 id TOP_END
 id TOP_START
-id ToTime
 id accessibility_action_clickable_span
 id accessibility_custom_action_0
 id accessibility_custom_action_1
@@ -1526,10 +1525,10 @@ id barrier
 id beginning
 id blocking
 id bottom
+id btn
 id button
 id button2
 id button3
-id button4
 id buttonPanel
 id cancel_button
 id center
@@ -1542,6 +1541,7 @@ id chip
 id chip_group
 id chooseLessonSubSpinner
 id chooseLevelSpinner
+id chooseTime
 id chronometer
 id city
 id clear_text
@@ -1621,12 +1621,12 @@ id item_touch_helper_previous_elevation
 id labeled
 id largeLabel
 id left
-id lessonTime
 id level
 id light
 id line1
 id line3
 id listMode
+id listView
 id list_item
 id loginb3
 id mailb2
@@ -1741,6 +1741,8 @@ id src_over
 id standard
 id start
 id stretch
+id subject
+id subject2
 id submenuarrow
 id submit_area
 id tabMode
@@ -1765,7 +1767,6 @@ id textView2
 id textView3
 id textView4
 id textView5
-id textView6
 id text_input_end_icon
 id text_input_start_icon
 id text_search
@@ -1784,6 +1785,7 @@ id transition_layout_save
 id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
+id tvContact
 id tvHour
 id tvLevel
 id tvPrice
@@ -1874,6 +1876,7 @@ layout activity_scheduled_lessons
 layout activity_search_for_lessons
 layout activity_user_registration
 layout custom_dialog
+layout custom_layout
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar

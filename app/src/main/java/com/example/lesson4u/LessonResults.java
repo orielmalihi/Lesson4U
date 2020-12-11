@@ -17,7 +17,7 @@ import java.util.ArrayList;
 
 import java.util.ArrayList;
 
-public class LessonResults extends AppCompatActivity implements View.OnClickListener {
+public class LessonResults extends AppCompatActivity {
 
     //private ListView listView;
     final String TAG = "lessonResults";
