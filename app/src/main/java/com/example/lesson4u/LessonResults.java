@@ -28,6 +28,7 @@ public class LessonResults extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lesson_results);
+
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("lessons");
         ArrayList<String> MatchedLessons = (ArrayList<String>) getIntent().getSerializableExtra("MatchedLessons");
