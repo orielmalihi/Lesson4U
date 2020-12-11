@@ -9,8 +9,7 @@ import java.util.LinkedList;
 
 public class FirebaseTeacher {
 
-    public static void writeNewTeacher(String uid, String mail, String phone, String fname, String lname, String city ,
-                                       ArrayList<LessonObj> subs){
+    public static void writeNewTeacher(String uid, String mail, String phone, String fname, String lname, String city){
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("teachers");
         TeacherObj newTeacher = new TeacherObj(mail , fname , lname , city , phone);

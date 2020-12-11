@@ -20,7 +20,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class AddLessonActivity extends AppCompatActivity {
     private FirebaseAuth auth = FirebaseAuth.getInstance();
-    private String currentuser;
+    private String currentUser;
     private Button bAddLesson;
     private EditText eTime;
     private EditText eDate;
@@ -32,7 +32,7 @@ public class AddLessonActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_lesson);
-        currentuser = auth.getInstance().getCurrentUser().getUid();
+        currentUser = auth.getInstance().getCurrentUser().getUid();
         bAddLesson = findViewById(R.id.addLessonBtn);
         eTime = findViewById(R.id.lessonTime);
         eDate = findViewById(R.id.LessonDate);
@@ -45,7 +45,7 @@ public class AddLessonActivity extends AppCompatActivity {
             public void onClick(View v) {
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
                 DatabaseReference myRef = database.getReference("lessons");
-                LessonObj newLesson = new LessonObj(currentuser, spLessonSubjects.getSelectedItem().toString(), spLevel.getSelectedItem().toString(), Integer.parseInt(price.getText().toString()), eDate.getText().toString(), eTime.getText().toString());
+                LessonObj newLesson = new LessonObj(currentUser, spLessonSubjects.getSelectedItem().toString(), spLevel.getSelectedItem().toString(), Integer.parseInt(price.getText().toString()), eDate.getText().toString(), eTime.getText().toString());
                 myRef.push().setValue(newLesson).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(Task<Void> task) {
@@ -55,7 +55,7 @@ public class AddLessonActivity extends AppCompatActivity {
                             eDate.getText().clear();
                             price.getText().clear();
                         } else {
-                            Toast.makeText(AddLessonActivity.this, "Lesson adding failed", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(AddLessonActivity.this, "WHOOPS! Lesson adding failed", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });

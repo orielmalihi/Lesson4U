@@ -1,5 +1,8 @@
 package com.example.lesson4u;
 
+import java.io.Serializable;
+import java.util.Objects;
+
 public class LessonObj {
     private String teacherUID;
     private String subject;
@@ -7,20 +10,12 @@ public class LessonObj {
     private int price;
     private String date;
     private String time;
-
-    public boolean isScheduled() {
-        return isScheduled;
-    }
-
-    public void setScheduled(boolean scheduled) {
-        isScheduled = scheduled;
-    }
-
     private boolean isScheduled = false;
 
-    public LessonObj(){
 
+    public LessonObj() {
     }
+
     public LessonObj(String uid, String sub, String lev, int pr, String date, String time) {
         teacherUID = uid;
         subject = sub;
@@ -70,4 +65,29 @@ public class LessonObj {
     public String getTime() {
         return time;
     }
+
+    public boolean isScheduled() {
+        return isScheduled;
+    }
+
+    public void setScheduled(boolean scheduled) {
+        isScheduled = scheduled;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        LessonObj lessonObj = (LessonObj) o;
+        return price == lessonObj.price &&
+                isScheduled == lessonObj.isScheduled &&
+                teacherUID.equals(lessonObj.teacherUID) &&
+                subject.equals(lessonObj.subject) &&
+                level.equals(lessonObj.level) &&
+                date.equals(lessonObj.date) &&
+                time.equals(lessonObj.time);
+    }
+
 }
+
+
