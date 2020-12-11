@@ -77,13 +77,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             sp = getSharedPreferences("user_details", 0);
             type = sp.getString("type", null);
             Log.d(TAG, "type is " + type);
-            if (type.equals("student")) {
-                dynamic.setText("search for lessons");
-            } else if (type.equals("teacher")) {
-                dynamic.setText("add lesson");
-            }
-            String fname = sp.getString("fname", null);
-            welcome.setText("Welcome " + fname);
+//            if (type.equals("student")) {
+//                dynamic.setText("search for lessons");
+//            } else if (type.equals("teacher")) {
+//                dynamic.setText("add lesson");
+//            }
         }
     }
 
@@ -128,8 +126,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else if (v == scheduledLessons) {
             Intent intent = new Intent(this, ScheduledLessonsActivity.class);
             startActivity(intent);
-        } else if(v == refresh){
-            this.onStart();
         }
     }
 
@@ -154,6 +150,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         addInfoToTheSharedPreferencesFile("type", type);
                         Log.d(TAG, "refreshPS:dataSnapshot type = "+type);
                         addInfoToTheSharedPreferencesFile("fname", s.getFirstName());
+                        welcome.setText("Welcome " + s.getFirstName());
+                        dynamic.setText("search for lessons");
+
                         Log.d(TAG, "refreshPS:dataSnapshot first name = "+s.getFirstName());
                     } else if(type.equals("teachers")){
                         type = "teacher";
@@ -161,6 +160,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         addInfoToTheSharedPreferencesFile("type", type);
                         Log.d(TAG, "refreshPS:dataSnapshot type = "+type);
                         addInfoToTheSharedPreferencesFile("fname", t.getFirstName());
+                        welcome.setText("Welcome " + t.getFirstName());
+                        dynamic.setText("search for lessons");
                         Log.d(TAG, "refreshPS:dataSnapshot first name = "+t.getFirstName());
                     }
                 }
