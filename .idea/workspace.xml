@@ -28,19 +28,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d7e3945-e705-4ebb-8ac4-27db2b8d8840" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/res/google-services/debug/values/values.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/generated/res/google-services/debug/values/values.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/source/buildConfig/debug/com/example/lesson4u/BuildConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/generated/source/buildConfig/debug/com/example/lesson4u/BuildConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/R.jar" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/R.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/packaged_manifests/debug/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/packaged_manifests/debug/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/lesson4u/LessonResults.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/lesson4u/LessonResults.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_lesson_results.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_lesson_results.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
-    </list>
+    <list default="true" id="5d7e3945-e705-4ebb-8ac4-27db2b8d8840" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -296,25 +284,25 @@
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="901" y="326" key="AndroidCreateResourceFileDialog/0.0.1920.1160@0.0.1920.1160" timestamp="1607470610092" />
-    <state width="1305" height="233" key="GridCell.Tab.0.bottom" timestamp="1607678446248">
+    <state width="1305" height="233" key="GridCell.Tab.0.bottom" timestamp="1607678497420">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1305" height="233" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1607678446248" />
+    <state width="1305" height="233" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1607678497420" />
     <state width="1876" height="276" key="GridCell.Tab.0.bottom/0.0.1920.1160@0.0.1920.1160" timestamp="1607517384965" />
-    <state width="1305" height="233" key="GridCell.Tab.0.center" timestamp="1607678446248">
+    <state width="1305" height="233" key="GridCell.Tab.0.center" timestamp="1607678497420">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1305" height="233" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1607678446248" />
+    <state width="1305" height="233" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1607678497420" />
     <state width="1876" height="276" key="GridCell.Tab.0.center/0.0.1920.1160@0.0.1920.1160" timestamp="1607517384965" />
-    <state width="1305" height="233" key="GridCell.Tab.0.left" timestamp="1607678446248">
+    <state width="1305" height="233" key="GridCell.Tab.0.left" timestamp="1607678497420">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1305" height="233" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1607678446248" />
+    <state width="1305" height="233" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1607678497420" />
     <state width="1876" height="276" key="GridCell.Tab.0.left/0.0.1920.1160@0.0.1920.1160" timestamp="1607517384964" />
-    <state width="1305" height="233" key="GridCell.Tab.0.right" timestamp="1607678446248">
+    <state width="1305" height="233" key="GridCell.Tab.0.right" timestamp="1607678497420">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1305" height="233" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1607678446248" />
+    <state width="1305" height="233" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1607678497420" />
     <state width="1876" height="276" key="GridCell.Tab.0.right/0.0.1920.1160@0.0.1920.1160" timestamp="1607517384965" />
     <state x="184" y="12" key="SettingsEditor" timestamp="1607678097994">
       <screen x="0" y="0" width="1366" height="728" />
@@ -324,5 +312,9 @@
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="769" y="494" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1160@0.0.1920.1160" timestamp="1607448928417" />
+    <state x="339" y="166" key="run.anything.popup" timestamp="1607678482357">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="166" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1607678482357" />
   </component>
 </project>
