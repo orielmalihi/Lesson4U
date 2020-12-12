@@ -34,8 +34,8 @@ public class SearchForLessonsActivity extends AppCompatActivity {
     private String currentUser;
     private Button bSearchLesson;
     private EditText eDate;
-    private EditText beginTime;
-    private EditText endTime;
+    private Spinner beginTime;
+    private Spinner endTime;
     private Spinner spLessonSubjects;
     private Spinner spLevel;
 
@@ -49,8 +49,8 @@ public class SearchForLessonsActivity extends AppCompatActivity {
         currentUser = auth.getInstance().getCurrentUser().getUid();
         bSearchLesson = findViewById(R.id.SearchButton);
         eDate = findViewById(R.id.DateSearch);
-        beginTime = findViewById(R.id.FromTime);
-        endTime = findViewById(R.id.ToTime);
+        beginTime = findViewById(R.id.subject);
+        endTime = findViewById(R.id.subject2);
         spLessonSubjects = findViewById(R.id.Subject);
         spLevel = findViewById(R.id.level);
         prog = findViewById(R.id.progressBar);
@@ -68,8 +68,8 @@ public class SearchForLessonsActivity extends AppCompatActivity {
         bSearchLesson.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int beginst = Integer.parseInt(new StringTokenizer(beginTime.getText().toString(), ":").nextToken());
-                int endst = Integer.parseInt(new StringTokenizer(endTime.getText().toString(), ":").nextToken());
+                int beginst = Integer.parseInt(beginTime.getSelectedItem().toString());
+                int endst = Integer.parseInt(endTime.getSelectedItem().toString());
                 Log.d(TAG , "beginst =" + beginst + " endst = " + endst);
                 myRef.addValueEventListener(new ValueEventListener() {
 
@@ -89,18 +89,26 @@ public class SearchForLessonsActivity extends AppCompatActivity {
                                                         MatchedLessonIDs.add(snapshot.getKey());
                                                         MatchedLessons.add(tempLesson);
                                                         Log.d(TAG, "key = " + snapshot.getKey());
+
                                                         //Toast.makeText(SearchForLessonsActivity.this, "Successfully ", Toast.LENGTH_SHORT).show();
+
                                                     }
                                                 }
                                             }
                                         }
                                     }
                                 }
-                               //
-                                Intent intent = new Intent(getApplicationContext(), LessonResults.class);
-                                intent.putParcelableArrayListExtra("MatchedLessons", MatchedLessons);
-                                intent.putExtra("lessonIDs", MatchedLessonIDs);
-                                startActivity(intent);
+
+                                if(MatchedLessons.isEmpty()){
+                                    Toast.makeText(SearchForLessonsActivity.this, "No lessons were found, try again. ", Toast.LENGTH_SHORT).show();
+                                }
+                                else{
+                                   Intent intent = new Intent(getApplicationContext(), LessonResults.class);
+                                   intent.putParcelableArrayListExtra("MatchedLessons", MatchedLessons);
+                                   intent.putExtra("lessonIDs", MatchedLessonIDs);
+                                   startActivity(intent);
+                                }
+
 
                             }
                             @Override

@@ -29,7 +29,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     final String TAG = "MainActivity";
     SharedPreferences sp;
     Button logout;
-    Button refresh;
     Button profile;
     Button dynamic;
     Button scheduledLessons;
@@ -67,30 +66,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 //            Toast.makeText(this, "Already logged in", Toast.LENGTH_LONG).show();
             logout = findViewById(R.id.button3);
-            refresh = findViewById(R.id.button4);
             welcome = findViewById(R.id.textView);
             profile = findViewById(R.id.profilebt);
             dynamic = findViewById(R.id.dinamicBt);
             scheduledLessons = findViewById(R.id.scheduledLessonsBt);
             logout.setOnClickListener(this);
-            refresh.setOnClickListener(this);
             profile.setOnClickListener(this);
             dynamic.setOnClickListener(this);
             scheduledLessons.setOnClickListener(this);
             sp = getSharedPreferences("user_details", 0);
             type = sp.getString("type", null);
             Log.d(TAG, "type is " + type);
-            if (type.equals("student")) {
-                dynamic.setText("search for lessons");
-            } else if (type.equals("teacher")) {
-                dynamic.setText("add lesson");
-            }
 
+//            if (type.equals("student")) {
+//                dynamic.setText("search for lessons");
+//            } else if (type.equals("teacher")) {
+//                dynamic.setText("add lesson");
+//            }
 
-
-
-            String fname = sp.getString("fname", null);
-            welcome.setText("Welcome " + fname);
         }
     }
 
@@ -133,6 +126,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             }
         } else if (v == scheduledLessons) {
+
             String currUserId = auth.getCurrentUser().getUid();
             ArrayList<String> lessonIds = new ArrayList<>();
             ArrayList<LessonObj> lessons = new ArrayList<>();
@@ -170,8 +164,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
 
-        } else if(v == refresh){
-            this.onStart();
         }
     }
 
@@ -196,6 +188,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         addInfoToTheSharedPreferencesFile("type", type);
                         Log.d(TAG, "refreshPS:dataSnapshot type = "+type);
                         addInfoToTheSharedPreferencesFile("fname", s.getFirstName());
+                        welcome.setText("Welcome " + s.getFirstName());
+                        dynamic.setText("search for lessons");
+
                         Log.d(TAG, "refreshPS:dataSnapshot first name = "+s.getFirstName());
                     } else if(type.equals("teachers")){
                         type = "teacher";
@@ -203,6 +198,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         addInfoToTheSharedPreferencesFile("type", type);
                         Log.d(TAG, "refreshPS:dataSnapshot type = "+type);
                         addInfoToTheSharedPreferencesFile("fname", t.getFirstName());
+                        welcome.setText("Welcome " + t.getFirstName());
+                        dynamic.setText("search for lessons");
                         Log.d(TAG, "refreshPS:dataSnapshot first name = "+t.getFirstName());
                     }
                 }

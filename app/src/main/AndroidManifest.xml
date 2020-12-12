@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Lesson4U">
+
         <activity android:name=".LessonDetailsActivity"></activity>
         <activity android:name=".LessonResults" />
         <activity android:name=".SearchForLessonsActivity" />

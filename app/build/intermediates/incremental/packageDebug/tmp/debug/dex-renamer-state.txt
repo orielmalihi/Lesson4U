@@ -1,4 +1,4 @@
-#Sat Dec 12 20:02:38 CET 2020
+#Sat Dec 12 20:19:36 CET 2020
 base.0=C\:\\Users\\Daniel\\Documents\\uni\\semester_5\\software engineering\\Lesson4U\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

@@ -16,6 +16,10 @@ public class LessonObj implements Parcelable {
     private boolean isScheduled = false;
 
 
+
+
+
+
     public LessonObj() {
     }
 

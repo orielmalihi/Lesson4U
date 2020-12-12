@@ -48,6 +48,10 @@
         "source": "C:\\Users\\Daniel\\Documents\\uni\\semester_5\\software engineering\\Lesson4U\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v24\\ic_launcher_foreground.xml"
     },
     {
+        "merged": "C:\\Users\\Daniel\\Documents\\uni\\semester_5\\software engineering\\Lesson4U\\app\\build\\intermediates\\res\\merged\\debug\\layout_custom_layout.xml.flat",
+        "source": "C:\\Users\\Daniel\\Documents\\uni\\semester_5\\software engineering\\Lesson4U\\app\\src\\main\\res\\layout\\custom_layout.xml"
+    },
+    {
         "merged": "C:\\Users\\Daniel\\Documents\\uni\\semester_5\\software engineering\\Lesson4U\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
         "source": "C:\\Users\\Daniel\\Documents\\uni\\semester_5\\software engineering\\Lesson4U\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },
