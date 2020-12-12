@@ -199,7 +199,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         Log.d(TAG, "refreshPS:dataSnapshot type = "+type);
                         addInfoToTheSharedPreferencesFile("fname", t.getFirstName());
                         welcome.setText("Welcome " + t.getFirstName());
-                        dynamic.setText("search for lessons");
+                        dynamic.setText("add lesson");
                         Log.d(TAG, "refreshPS:dataSnapshot first name = "+t.getFirstName());
                     }
                 }
