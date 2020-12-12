@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else {
             refreshPS();
 
-//            Toast.makeText(this, "Already logged in", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Already logged in", Toast.LENGTH_LONG).show();
             logout = findViewById(R.id.button3);
             welcome = findViewById(R.id.textView);
             profile = findViewById(R.id.profilebt);
@@ -126,7 +126,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             }
         } else if (v == scheduledLessons) {
-
             String currUserId = auth.getCurrentUser().getUid();
             ArrayList<String> lessonIds = new ArrayList<>();
             ArrayList<LessonObj> lessons = new ArrayList<>();
@@ -213,8 +212,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
 
         };
-        studentsRef.addValueEventListener(listener);
-        teachersRef.addValueEventListener(listener);
+//        studentsRef.addValueEventListener(listener);
+//        teachersRef.addValueEventListener(listener);
+        studentsRef.removeEventListener(listener);
+        teachersRef.removeEventListener(listener);
+
 //        Log.d(TAG, "userRef is " + userRef.getKey() + ", userRef2 is " + userRef2.getKey());
     }
     private void addInfoToTheSharedPreferencesFile(String key, String value){
