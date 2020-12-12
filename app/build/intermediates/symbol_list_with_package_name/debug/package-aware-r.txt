@@ -1605,6 +1605,7 @@ id image
 id imageView
 id imageView10
 id imageView11
+id imageView111
 id imageView12
 id imageView2
 id imageView3
@@ -1612,7 +1613,6 @@ id imageView4
 id imageView5
 id imageView6
 id imageView7
-id imageView8
 id imageView9
 id info
 id invisible
@@ -1701,6 +1701,7 @@ id rounded
 id save_non_transition_alpha
 id save_overlay_view
 id scale
+id schedLayout
 id scheduledLessonsBt
 id screen
 id scroll
@@ -1762,7 +1763,6 @@ id textSpacerNoTitle
 id textStart
 id textView
 id textView2
-id textView3
 id textView4
 id textView5
 id textView6
@@ -1785,8 +1785,10 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id tvHour
+id tvHour2
 id tvLevel
 id tvPrice
+id tvPrice2
 id tvSubject
 id tvTeacherName
 id tvTime
@@ -1918,6 +1920,7 @@ layout mtrl_picker_header_toggle
 layout mtrl_picker_text_input_date
 layout mtrl_picker_text_input_date_range
 layout my_row
+layout my_row_for_sched
 layout notification_action
 layout notification_action_tombstone
 layout notification_template_custom_big

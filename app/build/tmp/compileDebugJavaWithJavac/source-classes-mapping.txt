@@ -1,3 +1,20 @@
+com/example/lesson4u/FirebaseStudent.java
+ com.example.lesson4u.FirebaseStudent
+com/example/lesson4u/BuildConfig.java
+ com.example.lesson4u.BuildConfig
+com/example/lesson4u/LoginOrRegister.java
+ com.example.lesson4u.LoginOrRegister
+com/example/lesson4u/FirebaseLesson.java
+ com.example.lesson4u.FirebaseLesson
+com/example/lesson4u/LessonResults.java
+ com.example.lesson4u.LessonResults
+com/example/lesson4u/LessonObj.java
+ com.example.lesson4u.LessonObj
+ com.example.lesson4u.LessonObj$1
+com/example/lesson4u/ProfileActivity.java
+ com.example.lesson4u.ProfileActivity
+com/example/lesson4u/ScheduledLessonsActivity.java
+ com.example.lesson4u.ScheduledLessonsActivity
 com/example/lesson4u/LoginActivity.java
  com.example.lesson4u.LoginActivity
  com.example.lesson4u.LoginActivity$1
@@ -5,35 +22,6 @@ com/example/lesson4u/SearchForLessonsActivity.java
  com.example.lesson4u.SearchForLessonsActivity
  com.example.lesson4u.SearchForLessonsActivity$1
  com.example.lesson4u.SearchForLessonsActivity$1$1
-com/example/lesson4u/LoginOrRegister.java
- com.example.lesson4u.LoginOrRegister
-com/example/lesson4u/LessonResults.java
- com.example.lesson4u.LessonResults
-com/example/lesson4u/RegisterActivity.java
- com.example.lesson4u.RegisterActivity
- com.example.lesson4u.RegisterActivity$1
- com.example.lesson4u.RegisterActivity$2
-com/example/lesson4u/ProfileActivity.java
- com.example.lesson4u.ProfileActivity
-com/example/lesson4u/BuildConfig.java
- com.example.lesson4u.BuildConfig
-com/example/lesson4u/AddLessonActivity.java
- com.example.lesson4u.AddLessonActivity
- com.example.lesson4u.AddLessonActivity$1
- com.example.lesson4u.AddLessonActivity$1$1
-com/example/lesson4u/FirebaseStudent.java
- com.example.lesson4u.FirebaseStudent
-com/example/lesson4u/MyAdapter.java
- com.example.lesson4u.MyAdapter
- com.example.lesson4u.MyAdapter$1
- com.example.lesson4u.MyAdapter$MyViewHolder
-com/example/lesson4u/LessonObj.java
- com.example.lesson4u.LessonObj
- com.example.lesson4u.LessonObj$1
-com/example/lesson4u/FirebaseLesson.java
- com.example.lesson4u.FirebaseLesson
-com/example/lesson4u/userRegistration.java
- com.example.lesson4u.userRegistration
 com/example/lesson4u/StudentObj.java
  com.example.lesson4u.StudentObj
 com/example/lesson4u/LessonDetailsActivity.java
@@ -44,9 +32,26 @@ com/example/lesson4u/LessonDetailsActivity.java
 com/example/lesson4u/MainActivity.java
  com.example.lesson4u.MainActivity
  com.example.lesson4u.MainActivity$1
+ com.example.lesson4u.MainActivity$2
 com/example/lesson4u/TeacherObj.java
  com.example.lesson4u.TeacherObj
+com/example/lesson4u/MyAdapterForScheduledLessons.java
+ com.example.lesson4u.MyAdapterForScheduledLessons
+ com.example.lesson4u.MyAdapterForScheduledLessons$1
+ com.example.lesson4u.MyAdapterForScheduledLessons$MyViewHolder
+com/example/lesson4u/userRegistration.java
+ com.example.lesson4u.userRegistration
 com/example/lesson4u/FirebaseTeacher.java
  com.example.lesson4u.FirebaseTeacher
-com/example/lesson4u/ScheduledLessonsActivity.java
- com.example.lesson4u.ScheduledLessonsActivity
+com/example/lesson4u/AddLessonActivity.java
+ com.example.lesson4u.AddLessonActivity
+ com.example.lesson4u.AddLessonActivity$1
+ com.example.lesson4u.AddLessonActivity$1$1
+com/example/lesson4u/RegisterActivity.java
+ com.example.lesson4u.RegisterActivity
+ com.example.lesson4u.RegisterActivity$1
+ com.example.lesson4u.RegisterActivity$2
+com/example/lesson4u/MyAdapter.java
+ com.example.lesson4u.MyAdapter
+ com.example.lesson4u.MyAdapter$1
+ com.example.lesson4u.MyAdapter$MyViewHolder

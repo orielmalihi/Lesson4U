@@ -54,6 +54,7 @@ public class AddLessonActivity extends AppCompatActivity {
                             eTime.getText().clear();
                             eDate.getText().clear();
                             price.getText().clear();
+                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
                         } else {
                             Toast.makeText(AddLessonActivity.this, "WHOOPS! Lesson adding failed", Toast.LENGTH_SHORT).show();
                         }

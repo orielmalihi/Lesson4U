@@ -22,7 +22,7 @@ public class userRegistration extends AppCompatActivity implements View.OnClickL
     SharedPreferences sp;
     EditText First_name;
     EditText Last_name;
-    //EditText email; // not used
+   // EditText email; // not used
     EditText city;
     EditText Phone_number;
     Button registrationB;

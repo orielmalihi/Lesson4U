@@ -36,16 +36,16 @@
         "source": "C:\\Users\\Daniel\\Documents\\uni\\semester_5\\software engineering\\Lesson4U\\app\\src\\main\\res\\drawable\\homework1.png"
     },
     {
-        "merged": "C:\\Users\\Daniel\\Documents\\uni\\semester_5\\software engineering\\Lesson4U\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
-        "source": "C:\\Users\\Daniel\\Documents\\uni\\semester_5\\software engineering\\Lesson4U\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v24\\ic_launcher_foreground.xml"
+        "merged": "C:\\Users\\Daniel\\Documents\\uni\\semester_5\\software engineering\\Lesson4U\\app\\build\\intermediates\\res\\merged\\debug\\drawable_check_mark.png.flat",
+        "source": "C:\\Users\\Daniel\\Documents\\uni\\semester_5\\software engineering\\Lesson4U\\app\\src\\main\\res\\drawable\\check_mark.png"
     },
     {
         "merged": "C:\\Users\\Daniel\\Documents\\uni\\semester_5\\software engineering\\Lesson4U\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_launcher_background.png.flat",
         "source": "C:\\Users\\Daniel\\Documents\\uni\\semester_5\\software engineering\\Lesson4U\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_launcher_background.png"
     },
     {
-        "merged": "C:\\Users\\Daniel\\Documents\\uni\\semester_5\\software engineering\\Lesson4U\\app\\build\\intermediates\\res\\merged\\debug\\drawable_check_mark.png.flat",
-        "source": "C:\\Users\\Daniel\\Documents\\uni\\semester_5\\software engineering\\Lesson4U\\app\\src\\main\\res\\drawable\\check_mark.png"
+        "merged": "C:\\Users\\Daniel\\Documents\\uni\\semester_5\\software engineering\\Lesson4U\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\Daniel\\Documents\\uni\\semester_5\\software engineering\\Lesson4U\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v24\\ic_launcher_foreground.xml"
     },
     {
         "merged": "C:\\Users\\Daniel\\Documents\\uni\\semester_5\\software engineering\\Lesson4U\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
@@ -174,5 +174,9 @@
     {
         "merged": "C:\\Users\\Daniel\\Documents\\uni\\semester_5\\software engineering\\Lesson4U\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
         "source": "C:\\Users\\Daniel\\Documents\\uni\\semester_5\\software engineering\\Lesson4U\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Daniel\\Documents\\uni\\semester_5\\software engineering\\Lesson4U\\app\\build\\intermediates\\res\\merged\\debug\\layout_my_row_for_sched.xml.flat",
+        "source": "C:\\Users\\Daniel\\Documents\\uni\\semester_5\\software engineering\\Lesson4U\\app\\src\\main\\res\\layout\\my_row_for_sched.xml"
     }
 ]
