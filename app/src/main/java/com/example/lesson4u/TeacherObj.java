@@ -1,6 +1,8 @@
 package com.example.lesson4u;
 
 
+import java.util.ArrayList;
+import java.util.List;
 
 public class TeacherObj {
     private String email;
@@ -8,7 +10,7 @@ public class TeacherObj {
     private String lastName;
     private String phoneNum;
     private String city;
-    //private ArrayList<LessonObj> lessons;
+    private List<LessonObj> lessons;
 
 
 
@@ -20,7 +22,7 @@ public class TeacherObj {
         this.firstName = fname;
         this.lastName = lname;
         this.phoneNum = phone;
-        //this.lessons = new ArrayList<LessonObj>(); // only scheduled lessons
+        this.lessons = new ArrayList<LessonObj>(); // only scheduled lessons
     }
 
 

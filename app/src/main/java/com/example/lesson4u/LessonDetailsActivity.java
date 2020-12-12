@@ -26,7 +26,7 @@ public class LessonDetailsActivity extends AppCompatActivity {
     final FirebaseDatabase database = FirebaseDatabase.getInstance();
     FirebaseAuth auth = FirebaseAuth.getInstance();
     DatabaseReference myRef;
-    DatabaseReference studRef;
+    DatabaseReference studRef, teacherRef;
     DatabaseReference lessonRef;
     TextView teacherName, price, time, subject, level;
     Button bChoose;
@@ -52,6 +52,7 @@ public class LessonDetailsActivity extends AppCompatActivity {
         myRef = database.getReference("teachers").child(lesson.getTeacherUID());
         studRef = FirebaseStudent.getStudent(auth.getCurrentUser().getUid());
         lessonRef = database.getReference("lessons").child(lessonID);
+        teacherRef = database.getReference("teachers").child(lesson.getTeacherUID());
 
 
         price.setText("Price per hour: " + lesson.getPrice() + "₪");
@@ -59,12 +60,13 @@ public class LessonDetailsActivity extends AppCompatActivity {
         subject.setText("Subject: " + lesson.getSubject());
         level.setText("Level: " + lesson.getLevel());
 
+
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 TeacherObj t = dataSnapshot.getValue(TeacherObj.class);
-                String name = t.getFirstName();
-                teacherName.setText("Teacher: " + name);
+                String teacher_name = t.getFirstName();
+                teacherName.setText("Teacher: " + teacher_name);
             }
 
             @Override
@@ -76,16 +78,18 @@ public class LessonDetailsActivity extends AppCompatActivity {
         bChoose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                studRef.child("lessons").push().setValue(lessonID).addOnCompleteListener(new OnCompleteListener<Void>() {
+                studRef.child("lessons").push().setValue(lesson).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if(task.isSuccessful()){
+                            teacherRef.child("lessons").push().setValue(lesson);
                             Toast.makeText(LessonDetailsActivity.this, "Lesson scheduled SUCCCCCESSFULLY", Toast.LENGTH_SHORT).show();
                         }else{
                             Toast.makeText(LessonDetailsActivity.this, "Loser", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
+
                 lesson.setScheduled(true);
                 lessonRef.setValue(lesson);
                 Intent intent = new Intent(LessonDetailsActivity.this, MainActivity.class);
