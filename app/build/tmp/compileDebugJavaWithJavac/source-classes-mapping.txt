@@ -25,12 +25,17 @@ com/example/lesson4u/LessonDetailsActivity.java
 com/example/lesson4u/MainActivity.java
  com.example.lesson4u.MainActivity
  com.example.lesson4u.MainActivity$1
+ com.example.lesson4u.MainActivity$2
 com/example/lesson4u/TeacherObj.java
  com.example.lesson4u.TeacherObj
 com/example/lesson4u/SearchForLessonsActivity.java
  com.example.lesson4u.SearchForLessonsActivity
  com.example.lesson4u.SearchForLessonsActivity$1
  com.example.lesson4u.SearchForLessonsActivity$1$1
+com/example/lesson4u/MyAdapterForScheduledLessons.java
+ com.example.lesson4u.MyAdapterForScheduledLessons
+ com.example.lesson4u.MyAdapterForScheduledLessons$1
+ com.example.lesson4u.MyAdapterForScheduledLessons$MyViewHolder
 com/example/lesson4u/ProfileActivity.java
  com.example.lesson4u.ProfileActivity
 com/example/lesson4u/FirebaseTeacher.java

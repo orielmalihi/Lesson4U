@@ -1,5 +1,6 @@
 package com.example.lesson4u;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -18,11 +19,13 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     FirebaseAuth auth = FirebaseAuth.getInstance();
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
     final String TAG = "MainActivity";
     SharedPreferences sp;
     Button logout;
@@ -74,11 +77,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             sp = getSharedPreferences("user_details", 0);
             type = sp.getString("type", null);
             Log.d(TAG, "type is " + type);
+
 //            if (type.equals("student")) {
 //                dynamic.setText("search for lessons");
 //            } else if (type.equals("teacher")) {
 //                dynamic.setText("add lesson");
 //            }
+
         }
     }
 
@@ -121,8 +126,44 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             }
         } else if (v == scheduledLessons) {
-            Intent intent = new Intent(this, ScheduledLessonsActivity.class);
-            startActivity(intent);
+
+            String currUserId = auth.getCurrentUser().getUid();
+            ArrayList<String> lessonIds = new ArrayList<>();
+            ArrayList<LessonObj> lessons = new ArrayList<>();
+
+            DatabaseReference lessonsRef;
+            lessonsRef = database.getReference(type+"s").child(currUserId).child("lessons");
+            Log.d("scheduling", type);
+            lessonsRef.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                    if (lessonsRef != null) {
+                        for (DataSnapshot ds : dataSnapshot.getChildren()) {
+                            LessonObj temp = ds.getValue(LessonObj.class);
+                            Log.d("scheduling", temp.getSubject());
+                            lessons.add(temp);
+                        }
+
+                        Intent intent = new Intent(getApplicationContext(), ScheduledLessonsActivity.class);
+                        Log.d("scheduling", "lessons scheduled (ids): " + lessonIds.size());
+                        Log.d("scheduling", "lessons scheduled (objects): " + lessons.size());
+                        intent.putStringArrayListExtra("lessonIds", lessonIds);
+                        intent.putParcelableArrayListExtra("lessons", lessons);
+                        startActivity(intent);
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                }
+            });
+
+
+
+
+
         }
     }
 

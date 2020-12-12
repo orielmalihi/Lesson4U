@@ -11,6 +11,6 @@ public class ProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
-        //TODO: display scheduled lessons of the user
+        //TODO: make a nice profile page for the user
     }
 }
