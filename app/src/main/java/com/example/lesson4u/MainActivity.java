@@ -40,22 +40,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-    }
-
-    // What is this?
-//    protected void onReStart(){
-//        super.onRestart();
-//        this.onStart();
-//    }
-//
-//    protected void onResume(){
-//        super.onResume();
-//        this.onStart();
-//    }
-
-
-    protected void onStart() {
-        super.onStart();
         Log.d(TAG, "uid is " + auth.getUid());
         if (auth.getUid() == null) {
             Intent intent = new Intent(this, LoginOrRegister.class);
@@ -63,7 +47,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             finish();
         } else {
             refreshPS();
-
             Toast.makeText(this, "Already logged in", Toast.LENGTH_LONG).show();
             logout = findViewById(R.id.button3);
             welcome = findViewById(R.id.textView);
@@ -78,32 +61,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             type = sp.getString("type", null);
             Log.d(TAG, "type is " + type);
 
-//            if (type.equals("student")) {
-//                dynamic.setText("search for lessons");
-//            } else if (type.equals("teacher")) {
-//                dynamic.setText("add lesson");
-//            }
-
-        }
-    }
 
 
-//        // Write a message to the database
-//        FirebaseDatabase database = FirebaseDatabase.getInstance();
-//        DatabaseReference myRef = database.getReference("students/student1");
-//        DatabaseReference myRootRef = database.getReference();
-//        myRef.setValue("ploni");
-//        myRootRef.child("students").child("student1").setValue("oriel");
-//        myRootRef.child("students").child("student2").setValue("yahav");
-//        myRootRef.child("students").child("student3").setValue("shoval");
-//        String s = myRef.getKey();
-//
-//        Map<String, Object> map = new HashMap<>();
-//        map.put("student one", "student1");
-//        map.put("student two", "student2");
-//        myRootRef.child("students").child("student1").updateChildren(map);
-//        myRootRef.child("students").child("student3").removeValue();
-//
+
+    }}
+
+
 
     @Override
     public void onClick(View v) {
@@ -202,22 +165,30 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         Log.d(TAG, "refreshPS:dataSnapshot first name = "+t.getFirstName());
                     }
                 }
+                if (type.equals("student")) {
+                    dynamic.setText("search for lessons");
+                    Log.d("type: ", type);
+                }
+                else if (type.equals("teacher")) {
+                    dynamic.setText("add lesson");
+                }
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-                // Getting Post failed, log a message
                 Log.d(TAG, "refreshPS:onCancelled", databaseError.toException());
 
             }
 
         };
-//        studentsRef.addValueEventListener(listener);
-//        teachersRef.addValueEventListener(listener);
-        studentsRef.removeEventListener(listener);
-        teachersRef.removeEventListener(listener);
+
 
 //        Log.d(TAG, "userRef is " + userRef.getKey() + ", userRef2 is " + userRef2.getKey());
+
+        studentsRef.addValueEventListener(listener);
+        teachersRef.addValueEventListener(listener);
+
+
     }
     private void addInfoToTheSharedPreferencesFile(String key, String value){
         sp = getApplicationContext().getSharedPreferences("user_details", 0);
