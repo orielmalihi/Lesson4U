@@ -1,5 +1,6 @@
 package com.example.lesson4u;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -18,15 +19,16 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     FirebaseAuth auth = FirebaseAuth.getInstance();
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
     final String TAG = "MainActivity";
     SharedPreferences sp;
     Button logout;
-    Button refresh;
     Button profile;
     Button dynamic;
     Button scheduledLessons;
@@ -38,22 +40,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-    }
-
-    // What is this?
-//    protected void onReStart(){
-//        super.onRestart();
-//        this.onStart();
-//    }
-//
-//    protected void onResume(){
-//        super.onResume();
-//        this.onStart();
-//    }
-
-
-    protected void onStart() {
-        super.onStart();
         Log.d(TAG, "uid is " + auth.getUid());
         if (auth.getUid() == null) {
             Intent intent = new Intent(this, LoginOrRegister.class);
@@ -61,49 +47,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             finish();
         } else {
             refreshPS();
-
-//            Toast.makeText(this, "Already logged in", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Already logged in", Toast.LENGTH_LONG).show();
             logout = findViewById(R.id.button3);
-            refresh = findViewById(R.id.button4);
             welcome = findViewById(R.id.textView);
             profile = findViewById(R.id.profilebt);
             dynamic = findViewById(R.id.dinamicBt);
             scheduledLessons = findViewById(R.id.scheduledLessonsBt);
             logout.setOnClickListener(this);
-            refresh.setOnClickListener(this);
             profile.setOnClickListener(this);
             dynamic.setOnClickListener(this);
             scheduledLessons.setOnClickListener(this);
             sp = getSharedPreferences("user_details", 0);
             type = sp.getString("type", null);
             Log.d(TAG, "type is " + type);
-            if (type.equals("student")) {
-                dynamic.setText("search for lessons");
-            } else if (type.equals("teacher")) {
-                dynamic.setText("add lesson");
-            }
-            String fname = sp.getString("fname", null);
-            welcome.setText("Welcome " + fname);
-        }
-    }
 
 
-//        // Write a message to the database
-//        FirebaseDatabase database = FirebaseDatabase.getInstance();
-//        DatabaseReference myRef = database.getReference("students/student1");
-//        DatabaseReference myRootRef = database.getReference();
-//        myRef.setValue("ploni");
-//        myRootRef.child("students").child("student1").setValue("oriel");
-//        myRootRef.child("students").child("student2").setValue("yahav");
-//        myRootRef.child("students").child("student3").setValue("shoval");
-//        String s = myRef.getKey();
-//
-//        Map<String, Object> map = new HashMap<>();
-//        map.put("student one", "student1");
-//        map.put("student two", "student2");
-//        myRootRef.child("students").child("student1").updateChildren(map);
-//        myRootRef.child("students").child("student3").removeValue();
-//
+
+
+    }}
+
+
 
     @Override
     public void onClick(View v) {
@@ -126,10 +89,43 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             }
         } else if (v == scheduledLessons) {
-            Intent intent = new Intent(this, ScheduledLessonsActivity.class);
-            startActivity(intent);
-        } else if(v == refresh){
-            this.onStart();
+            String currUserId = auth.getCurrentUser().getUid();
+            ArrayList<String> lessonIds = new ArrayList<>();
+            ArrayList<LessonObj> lessons = new ArrayList<>();
+
+            DatabaseReference lessonsRef;
+            lessonsRef = database.getReference(type+"s").child(currUserId).child("lessons");
+            Log.d("scheduling", type);
+            lessonsRef.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                    if (lessonsRef != null) {
+                        for (DataSnapshot ds : dataSnapshot.getChildren()) {
+                            LessonObj temp = ds.getValue(LessonObj.class);
+                            Log.d("scheduling", temp.getSubject());
+                            lessons.add(temp);
+                        }
+
+                        Intent intent = new Intent(getApplicationContext(), ScheduledLessonsActivity.class);
+                        Log.d("scheduling", "lessons scheduled (ids): " + lessonIds.size());
+                        Log.d("scheduling", "lessons scheduled (objects): " + lessons.size());
+                        intent.putStringArrayListExtra("lessonIds", lessonIds);
+                        intent.putParcelableArrayListExtra("lessons", lessons);
+                        startActivity(intent);
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                }
+            });
+
+
+
+
+
         }
     }
 
@@ -154,6 +150,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         addInfoToTheSharedPreferencesFile("type", type);
                         Log.d(TAG, "refreshPS:dataSnapshot type = "+type);
                         addInfoToTheSharedPreferencesFile("fname", s.getFirstName());
+                        welcome.setText("Welcome " + s.getFirstName());
+                        dynamic.setText("search for lessons");
+
                         Log.d(TAG, "refreshPS:dataSnapshot first name = "+s.getFirstName());
                     } else if(type.equals("teachers")){
                         type = "teacher";
@@ -161,22 +160,35 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         addInfoToTheSharedPreferencesFile("type", type);
                         Log.d(TAG, "refreshPS:dataSnapshot type = "+type);
                         addInfoToTheSharedPreferencesFile("fname", t.getFirstName());
+                        welcome.setText("Welcome " + t.getFirstName());
+                        dynamic.setText("add lesson");
                         Log.d(TAG, "refreshPS:dataSnapshot first name = "+t.getFirstName());
                     }
+                }
+                if (type.equals("student")) {
+                    dynamic.setText("search for lessons");
+                    Log.d("type: ", type);
+                }
+                else if (type.equals("teacher")) {
+                    dynamic.setText("add lesson");
                 }
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-                // Getting Post failed, log a message
                 Log.d(TAG, "refreshPS:onCancelled", databaseError.toException());
 
             }
 
         };
+
+
+//        Log.d(TAG, "userRef is " + userRef.getKey() + ", userRef2 is " + userRef2.getKey());
+
         studentsRef.addValueEventListener(listener);
         teachersRef.addValueEventListener(listener);
-//        Log.d(TAG, "userRef is " + userRef.getKey() + ", userRef2 is " + userRef2.getKey());
+
+
     }
     private void addInfoToTheSharedPreferencesFile(String key, String value){
         sp = getApplicationContext().getSharedPreferences("user_details", 0);

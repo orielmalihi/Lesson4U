@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -33,10 +34,12 @@ public class SearchForLessonsActivity extends AppCompatActivity {
     private String currentUser;
     private Button bSearchLesson;
     private EditText eDate;
-    private EditText beginTime;
-    private EditText endTime;
+    private Spinner beginTime;
+    private Spinner endTime;
     private Spinner spLessonSubjects;
     private Spinner spLevel;
+
+    private ProgressBar prog;
 
 
     @Override
@@ -46,28 +49,35 @@ public class SearchForLessonsActivity extends AppCompatActivity {
         currentUser = auth.getInstance().getCurrentUser().getUid();
         bSearchLesson = findViewById(R.id.SearchButton);
         eDate = findViewById(R.id.DateSearch);
-        beginTime = findViewById(R.id.FromTime);
-        endTime = findViewById(R.id.ToTime);
+        beginTime = findViewById(R.id.subject);
+        endTime = findViewById(R.id.subject2);
         spLessonSubjects = findViewById(R.id.Subject);
         spLevel = findViewById(R.id.level);
+        prog = findViewById(R.id.progressBar);
+
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("lessons");
 
 
-        final ArrayList<String> MatchedLessons = new ArrayList<>();
+
+        final ArrayList<LessonObj> MatchedLessons = new ArrayList<>();
+        final ArrayList<String> MatchedLessonIDs = new ArrayList<>();
 //        final ArrayAdapter adapter = new ArrayAdapter<LessonObj>(this, R.layout.activity_search_for_lessons , MatchedLessons);
 //
 
         bSearchLesson.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int beginst = Integer.parseInt(new StringTokenizer(beginTime.getText().toString(), ":").nextToken());
-                int endst = Integer.parseInt(new StringTokenizer(endTime.getText().toString(), ":").nextToken());
+                int beginst = Integer.parseInt(beginTime.getSelectedItem().toString());
+                int endst = Integer.parseInt(endTime.getSelectedItem().toString());
                 Log.d(TAG , "beginst =" + beginst + " endst = " + endst);
                 myRef.addValueEventListener(new ValueEventListener() {
 
                             @Override
                             public void onDataChange(DataSnapshot dataSnapshot) {
+                                prog.setVisibility(View.VISIBLE);
+                                MatchedLessonIDs.clear();
+                                MatchedLessons.clear();
                                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                                     LessonObj tempLesson = snapshot.getValue(LessonObj.class);
                                     if (!tempLesson.isScheduled()) {
@@ -76,9 +86,11 @@ public class SearchForLessonsActivity extends AppCompatActivity {
                                             if (tempLesson.getLevel().equals(spLevel.getSelectedItem().toString())) {
                                                 if (tempLesson.getDate().equals(eDate.getText().toString())) {
                                                     if (beginst <= SchduledTime && SchduledTime <= endst) {
-                                                        MatchedLessons.add(snapshot.getKey());
+                                                        MatchedLessonIDs.add(snapshot.getKey());
+                                                        MatchedLessons.add(tempLesson);
                                                         Log.d(TAG, "key = " + snapshot.getKey());
-                                                        Toast.makeText(SearchForLessonsActivity.this, "Successfully ", Toast.LENGTH_SHORT).show();
+
+                                                        //Toast.makeText(SearchForLessonsActivity.this, "Successfully ", Toast.LENGTH_SHORT).show();
 
                                                     }
                                                 }
@@ -86,16 +98,28 @@ public class SearchForLessonsActivity extends AppCompatActivity {
                                         }
                                     }
                                 }
-                                Intent intent = new Intent(getApplicationContext(), LessonResults.class);
+                                 Intent intent = new Intent(getApplicationContext(), LessonResults.class);
                                 intent.putExtra("MatchedLessons", MatchedLessons);
                                 startActivity(intent);
-                            }
+
+                                if(MatchedLessons.isEmpty()){
+                                    Toast.makeText(SearchForLessonsActivity.this, "No lessons were found, try again. ", Toast.LENGTH_SHORT).show();
+                                }
+                                else{
+                                   Intent intent = new Intent(getApplicationContext(), LessonResults.class);
+                                   intent.putParcelableArrayListExtra("MatchedLessons", MatchedLessons);
+                                   intent.putExtra("lessonIDs", MatchedLessonIDs);
+                                   startActivity(intent);
+                                }
+
+
+                             }
                             @Override
                             public void onCancelled(DatabaseError databaseError) {
                             }
 
+
                         });
-              //  myRef.addValueEventListener(listener);
 
 
             }
@@ -103,5 +127,12 @@ public class SearchForLessonsActivity extends AppCompatActivity {
 
         });
 
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        prog.setVisibility(View.INVISIBLE);
     }
 }

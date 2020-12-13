@@ -22,7 +22,7 @@ public class userRegistration extends AppCompatActivity implements View.OnClickL
     SharedPreferences sp;
     EditText First_name;
     EditText Last_name;
-    //EditText email; // not used
+   // EditText email; // not used
     EditText city;
     EditText Phone_number;
     Button registrationB;
@@ -73,7 +73,7 @@ public class userRegistration extends AppCompatActivity implements View.OnClickL
                 startActivity(intent);
                 finish();
             } else if (type.equals("teacher")) {
-                //ArrayList<LessonObj> emptyList = new ArrayList<LessonObj>();
+
                 FirebaseTeacher.writeNewTeacher(auth.getUid(), auth.getCurrentUser().getEmail(), phoneNumber, fName,
                         lName, _city);
                 Intent intent = new Intent(this, MainActivity.class);
