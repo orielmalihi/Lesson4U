@@ -34,7 +34,6 @@
         app:layout_constraintHorizontal_bias="0.017"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-<<<<<<< HEAD
         app:layout_constraintVertical_bias="0.209" />
 
     <androidx.recyclerview.widget.RecyclerView
@@ -45,9 +44,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView10" />
-=======
-        app:layout_constraintVertical_bias="0.9" />
 
->>>>>>> 9ea1b42dcf5a9576d14fdf72425efa6c68e6f76c
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
