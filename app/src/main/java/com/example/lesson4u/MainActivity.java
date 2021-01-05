@@ -40,6 +40,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+//        Log.d(TAG, "uid is " + auth.getUid() + ", uid is "+auth.getCurrentUser().getUid());
+
         Log.d(TAG, "uid is " + auth.getUid());
         if (auth.getUid() == null) {
             Intent intent = new Intent(this, LoginOrRegister.class);
@@ -78,11 +80,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Intent intent = new Intent(this, ProfileActivity.class);
             startActivity(intent);
         } else if (v == dynamic) {
-            if (type.equals("student")) {
+            if (type!=null && type.equals("student")) {
                 Intent intent = new Intent(this, SearchForLessonsActivity.class);
                 startActivity(intent);
 
-            } else if (type.equals("teacher")) {
+            } else if (type!=null && type.equals("teacher")) {
                 Intent intent = new Intent(this, AddLessonActivity.class);
                 startActivity(intent);
 
@@ -105,6 +107,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             LessonObj temp = ds.getValue(LessonObj.class);
                             Log.d("scheduling", temp.getSubject());
                             lessons.add(temp);
+                            lessonIds.add(ds.getKey());
                         }
 
                         Intent intent = new Intent(getApplicationContext(), ScheduledLessonsActivity.class);
@@ -165,11 +168,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         Log.d(TAG, "refreshPS:dataSnapshot first name = "+t.getFirstName());
                     }
                 }
-                if (type.equals("student")) {
+                if (type!=null && type.equals("student")) {
                     dynamic.setText("search for lessons");
                     Log.d("type: ", type);
                 }
-                else if (type.equals("teacher")) {
+                else if (type != null && type.equals("teacher")) {
                     dynamic.setText("add lesson");
                 }
             }
