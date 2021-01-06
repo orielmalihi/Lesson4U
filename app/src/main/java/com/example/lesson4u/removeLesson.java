@@ -54,9 +54,6 @@ public class removeLesson extends AppCompatActivity {
 
         teacherRef = database.getReference("teachers").child(lesson.getTeacherUID());
         studRef = database.getReference("students").child(lesson.getStudentUID());
-//        for(int i=0; i<1000000; i++){
-//            System.out.println("try number "+i+" and get is"+lesson.getStudentUID());
-//        }
         lessonRef = database.getReference("lessons").child(lessonID);
 
         teacherRef.addValueEventListener(new ValueEventListener() {
@@ -88,10 +85,28 @@ public class removeLesson extends AppCompatActivity {
         remove.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println("get is "+lesson.getStudentUID());
+                studRef.child("lessons").child(lessonID).removeValue().addOnCompleteListener(new  OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        Toast.makeText(removeLesson.this, "lesson removed from student", Toast.LENGTH_LONG);
+                    }
+                });
+                teacherRef.child("lessons").child(lessonID).removeValue().addOnCompleteListener(new  OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        Toast.makeText(removeLesson.this, "lesson removed from teacher", Toast.LENGTH_LONG);
+                    }
+                });
+                lessonRef.removeValue().addOnCompleteListener(new  OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        Toast.makeText(removeLesson.this, "lesson removed from DB", Toast.LENGTH_LONG);
+                    }
+                });
+                Intent intent = new Intent(removeLesson.this, MainActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
-
     }
-
 }
