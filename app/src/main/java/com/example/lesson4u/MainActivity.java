@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -197,6 +198,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         SharedPreferences.Editor editor = sp.edit();
         editor.putString(key, value);
         editor.apply();
+    }
+
+
+    public void NavigateFacebook(View view) {
+        Log.w(TAG, "NavigateFacebook");
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/groups/676057579757401"));
+        startActivity(browserIntent);
     }
 }
 
