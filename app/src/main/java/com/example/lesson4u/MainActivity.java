@@ -98,6 +98,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             DatabaseReference lessonsRef;
             lessonsRef = database.getReference(type+"s").child(currUserId).child("lessons");
             Log.d("scheduling", type);
+
             lessonsRef.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -124,9 +125,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 }
             });
-//            lessonsRef.addValueEventListener();
-
-
 
 
 
