@@ -110,6 +110,12 @@ public class AddLessonActivity extends AppCompatActivity implements DatePickerDi
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
                 return true;
+            case R.id.Logout:
+                Toast.makeText(this, "Disconnecting", Toast.LENGTH_SHORT).show();
+                auth.signOut();
+                Intent intent1 = new Intent(getApplicationContext(), LoginOrRegister.class);
+                startActivity(intent1);
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }

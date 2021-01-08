@@ -8,37 +8,23 @@
     tools:context=".MainActivity"
     tools:visibility="visible">
 
+
     <TextView
         android:id="@+id/textView8"
-        android:layout_width="131dp"
-        android:layout_height="50dp"
+        android:layout_width="69dp"
+        android:layout_height="21dp"
         android:fontFamily="@font/alex_brush"
         android:text="follow us on"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="@color/black"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.25"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.941" />
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="104dp"
-        android:layout_height="38dp"
-        android:fontFamily="@font/abeezee_italic"
-        android:text="logout"
-        app:backgroundTint="#AD00838F"
-        app:iconTint="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.786"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.071" />
+        app:layout_constraintVertical_bias="0.064" />
 
     <Button
         android:id="@+id/dinamicBt"
@@ -110,15 +96,15 @@
 
     <ImageView
         android:id="@+id/imageView13"
-        android:layout_width="53dp"
-        android:layout_height="43dp"
+        android:layout_width="49dp"
+        android:layout_height="35dp"
         android:onClick="NavigateFacebook"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.561"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.926"
+        app:layout_constraintVertical_bias="0.094"
         app:srcCompat="@drawable/facebook" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     final String TAG = "MainActivity";
     SharedPreferences sp;
-    Button logout;
+   // Button logout;
     Button profile;
     Button dynamic;
     Button scheduledLessons;
@@ -54,12 +54,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else {
             refreshPS();
             Toast.makeText(this, "Already logged in", Toast.LENGTH_LONG).show();
-            logout = findViewById(R.id.button3);
+
             welcome = findViewById(R.id.textView);
             profile = findViewById(R.id.profilebt);
             dynamic = findViewById(R.id.dinamicBt);
             scheduledLessons = findViewById(R.id.scheduledLessonsBt);
-            logout.setOnClickListener(this);
+
             profile.setOnClickListener(this);
             dynamic.setOnClickListener(this);
             scheduledLessons.setOnClickListener(this);
@@ -76,12 +76,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        if (v == logout) {
-            auth.signOut();
-            Intent intent = new Intent(this, LoginOrRegister.class);
-            startActivity(intent);
-            finish();
-        } else if (v == profile) {
+        if (v == profile) {
             Intent intent = new Intent(this, ProfileActivity.class);
             startActivity(intent);
         } else if (v == dynamic) {
@@ -221,9 +216,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.MainPage:
-                Toast.makeText(this, "Go to main page", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Home page", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
+                return true;
+            case R.id.Logout:
+                Toast.makeText(this, "Disconnecting", Toast.LENGTH_SHORT).show();
+                auth.signOut();
+                Intent intent1 = new Intent(getApplicationContext(), LoginOrRegister.class);
+                startActivity(intent1);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

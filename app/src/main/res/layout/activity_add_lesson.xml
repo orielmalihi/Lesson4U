@@ -95,6 +95,7 @@
         android:id="@+id/date"
         android:layout_width="293dp"
         android:layout_height="40dp"
+        android:fontFamily="@font/abeezee_italic"
         android:text="Date"
         app:backgroundTint="#B000838F"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -105,16 +106,17 @@
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="126dp"
+        android:layout_width="239dp"
         android:layout_height="29dp"
-        android:text="Choose Time:"
+        android:fontFamily="@font/abeezee_italic"
+        android:text="Choose Starting Time:"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.207"
+        app:layout_constraintHorizontal_bias="0.343"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.548" />
+        app:layout_constraintVertical_bias="0.539" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

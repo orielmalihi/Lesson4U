@@ -13,13 +13,13 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import com.example.lesson4u.LessonObj;
-import com.example.lesson4u.MyAdapterForScheduledLessons;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
 
 public class ScheduledLessonsActivity extends AppCompatActivity {
 
+    private FirebaseAuth auth = FirebaseAuth.getInstance();
     final String TAG = "schedLessons";
     ArrayList<LessonObj> lessons;
     ArrayList<String> lessonIds;
@@ -43,6 +43,7 @@ public class ScheduledLessonsActivity extends AppCompatActivity {
         recyclerView.setAdapter(myAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -57,6 +58,12 @@ public class ScheduledLessonsActivity extends AppCompatActivity {
                 Toast.makeText(this, "Go to main page", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
+                return true;
+            case R.id.Logout:
+                Toast.makeText(this, "Disconnecting", Toast.LENGTH_SHORT).show();
+                auth.signOut();
+                Intent intent1 = new Intent(getApplicationContext(), LoginOrRegister.class);
+                startActivity(intent1);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
