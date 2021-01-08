@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -39,6 +40,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+//        Log.d(TAG, "uid is " + auth.getUid() + ", uid is "+auth.getCurrentUser().getUid());
 
         Log.d(TAG, "uid is " + auth.getUid());
         if (auth.getUid() == null) {
@@ -79,11 +82,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Intent intent = new Intent(this, ProfileActivity.class);
             startActivity(intent);
         } else if (v == dynamic) {
-            if (type.equals("student")) {
+            if (type!=null && type.equals("student")) {
                 Intent intent = new Intent(this, SearchForLessonsActivity.class);
                 startActivity(intent);
 
-            } else if (type.equals("teacher")) {
+            } else if (type!=null && type.equals("teacher")) {
                 Intent intent = new Intent(this, AddLessonActivity.class);
                 startActivity(intent);
 
@@ -96,6 +99,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             DatabaseReference lessonsRef;
             lessonsRef = database.getReference(type+"s").child(currUserId).child("lessons");
             Log.d("scheduling", type);
+
             lessonsRef.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -105,6 +109,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             LessonObj temp = ds.getValue(LessonObj.class);
                             Log.d("scheduling", temp.getSubject());
                             lessons.add(temp);
+                            lessonIds.add(ds.getKey());
                         }
 
                         Intent intent = new Intent(getApplicationContext(), ScheduledLessonsActivity.class);
@@ -121,8 +126,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 }
             });
-
-
 
 
 
@@ -165,11 +168,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         Log.d(TAG, "refreshPS:dataSnapshot first name = "+t.getFirstName());
                     }
                 }
-                if (type.equals("student")) {
+                if (type!=null && type.equals("student")) {
                     dynamic.setText("search for lessons");
                     Log.d("type: ", type);
                 }
-                else if (type.equals("teacher")) {
+                else if (type != null && type.equals("teacher")) {
                     dynamic.setText("add lesson");
                 }
             }
@@ -195,6 +198,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         SharedPreferences.Editor editor = sp.edit();
         editor.putString(key, value);
         editor.apply();
+    }
+
+
+    public void NavigateFacebook(View view) {
+        Log.w(TAG, "NavigateFacebook");
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/groups/676057579757401"));
+        startActivity(browserIntent);
     }
 }
 

@@ -42,10 +42,10 @@ public class MyAdapterForScheduledLessons extends RecyclerView.Adapter<MyAdapter
         holder.mainLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, LessonDetailsActivity.class);
+                Intent intent = new Intent(context, removeLesson.class);
                 LessonObj temp = MatchedLessons.get(position);
                 intent.putExtra("lesson", temp);
-                intent.putExtra("id", lessonIDs.get(position)); // lessonIDs is empty
+                intent.putExtra("id", lessonIDs.get(position));
                 context.startActivity(intent);
             }
         });

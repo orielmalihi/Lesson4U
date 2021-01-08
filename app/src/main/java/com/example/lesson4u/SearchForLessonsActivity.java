@@ -2,12 +2,14 @@ package com.example.lesson4u;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
@@ -23,17 +25,19 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Iterator;
 import java.util.List;
 import java.util.StringTokenizer;
 
-public class SearchForLessonsActivity extends AppCompatActivity {
+public class SearchForLessonsActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
 
     private FirebaseAuth auth = FirebaseAuth.getInstance();
     final String TAG = "SearchLessonsActivity";
     private String currentUser;
-    private Button bSearchLesson;
-    private EditText eDate;
+    private Button bSearchLesson, date;
+    private String chosenDate = "";
+//    private EditText eDate;
     private Spinner beginTime;
     private Spinner endTime;
     private Spinner spLessonSubjects;
@@ -48,7 +52,20 @@ public class SearchForLessonsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_search_for_lessons);
         currentUser = auth.getInstance().getCurrentUser().getUid();
         bSearchLesson = findViewById(R.id.SearchButton);
-        eDate = findViewById(R.id.DateSearch);
+//        eDate = findViewById(R.id.DateSearch);
+        date = findViewById(R.id.date2);
+
+        date.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Calendar systemCalendar = Calendar.getInstance();
+                int year = systemCalendar.get(Calendar.YEAR);
+                int month = systemCalendar.get(Calendar.MONTH);
+                int day = systemCalendar.get(Calendar.DAY_OF_MONTH);
+                DatePickerDialog datePiker = new DatePickerDialog(SearchForLessonsActivity.this, SearchForLessonsActivity.this, year, month, day);
+                datePiker.show();
+            }
+        });
         beginTime = findViewById(R.id.subject);
         endTime = findViewById(R.id.subject2);
         spLessonSubjects = findViewById(R.id.Subject);
@@ -84,7 +101,7 @@ public class SearchForLessonsActivity extends AppCompatActivity {
                                         int SchduledTime = Integer.parseInt(new StringTokenizer(tempLesson.getTime(), ":").nextToken());
                                         if (tempLesson.getSubject().equals(spLessonSubjects.getSelectedItem().toString())) {
                                             if (tempLesson.getLevel().equals(spLevel.getSelectedItem().toString())) {
-                                                if (tempLesson.getDate().equals(eDate.getText().toString())) {
+                                                if (tempLesson.getDate().equals(chosenDate)) {
                                                     if (beginst <= SchduledTime && SchduledTime <= endst) {
                                                         MatchedLessonIDs.add(snapshot.getKey());
                                                         MatchedLessons.add(tempLesson);
@@ -106,7 +123,7 @@ public class SearchForLessonsActivity extends AppCompatActivity {
                                     Toast.makeText(SearchForLessonsActivity.this, "No lessons were found, try again. ", Toast.LENGTH_SHORT).show();
                                 }
                                 else{
-                                   Intent intent = new Intent(getApplicationContext(), LessonResults.class);
+                                   Intent intent  = new Intent(getApplicationContext(), LessonResults.class);
                                    intent.putParcelableArrayListExtra("MatchedLessons", MatchedLessons);
                                    intent.putExtra("lessonIDs", MatchedLessonIDs);
                                    startActivity(intent);
@@ -134,5 +151,12 @@ public class SearchForLessonsActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         prog.setVisibility(View.INVISIBLE);
+    }
+
+    @Override
+    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+        chosenDate = "";
+        chosenDate = chosenDate + dayOfMonth + "/" + (month+1) + "/" + year;
+        date.setText(chosenDate);
     }
 }

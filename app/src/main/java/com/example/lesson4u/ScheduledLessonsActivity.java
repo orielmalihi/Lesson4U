@@ -8,6 +8,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.example.lesson4u.LessonObj;
+import com.example.lesson4u.MyAdapterForScheduledLessons;
+
 import java.util.ArrayList;
 
 public class ScheduledLessonsActivity extends AppCompatActivity {

@@ -78,11 +78,14 @@ public class LessonDetailsActivity extends AppCompatActivity {
         bChoose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                studRef.child("lessons").push().setValue(lesson).addOnCompleteListener(new OnCompleteListener<Void>() {
+                lesson.setScheduled(true);
+                lesson.setStudentUID(auth.getUid());
+                lessonRef.setValue(lesson);
+                studRef.child("lessons").child(lessonID).setValue(lesson).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if(task.isSuccessful()){
-                            teacherRef.child("lessons").push().setValue(lesson);
+                            teacherRef.child("lessons").child(lessonID).setValue(lesson);
                             Toast.makeText(LessonDetailsActivity.this, "Lesson scheduled SUCCCCCESSFULLY", Toast.LENGTH_SHORT).show();
                         }else{
                             Toast.makeText(LessonDetailsActivity.this, "Loser", Toast.LENGTH_SHORT).show();
@@ -90,8 +93,6 @@ public class LessonDetailsActivity extends AppCompatActivity {
                     }
                 });
 
-                lesson.setScheduled(true);
-                lessonRef.setValue(lesson);
                 Intent intent = new Intent(LessonDetailsActivity.this, MainActivity.class);
                 startActivity(intent);
                 finish();

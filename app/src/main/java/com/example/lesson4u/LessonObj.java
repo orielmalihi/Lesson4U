@@ -8,6 +8,7 @@ import java.util.Objects;
 
 public class LessonObj implements Parcelable {
     private String teacherUID;
+    private String studentUID = "";
     private String subject;
     private String level;
     private int price;
@@ -15,9 +16,13 @@ public class LessonObj implements Parcelable {
     private String time;
     private boolean isScheduled = false;
 
+    public String getStudentUID() {
+        return studentUID;
+    }
 
-
-
+    public void setStudentUID(String studentID) {
+        this.studentUID = studentID;
+    }
 
 
     public LessonObj() {
@@ -35,6 +40,7 @@ public class LessonObj implements Parcelable {
 
     protected LessonObj(Parcel in) {
         teacherUID = in.readString();
+        studentUID = in.readString(); // ???
         subject = in.readString();
         level = in.readString();
         price = in.readInt();
@@ -125,6 +131,7 @@ public class LessonObj implements Parcelable {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(teacherUID);
+        dest.writeString(studentUID); // ???
         dest.writeString(subject);
         dest.writeString(level);
         dest.writeInt(price);

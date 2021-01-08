@@ -17,10 +17,10 @@
         app:backgroundTint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.433"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.701" />
+        app:layout_constraintVertical_bias="0.707" />
 
     <EditText
         android:id="@+id/Last_name"
@@ -31,7 +31,10 @@
         android:hint="Last name"
         android:inputType="textPersonName"
         android:textColor="#FFFFFF"
+<<<<<<< HEAD
         android:textColorHighlight="#FFFFFF"
+=======
+>>>>>>> 0e637f1d133102b296f989ae2d2712e900c46912
         android:textColorHint="#FFFFFF"
         android:textColorLink="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -50,7 +53,10 @@
         android:hint="Phone number"
         android:inputType="phone"
         android:textColor="#FFFFFF"
+<<<<<<< HEAD
         android:textColorHighlight="#FFFFFF"
+=======
+>>>>>>> 0e637f1d133102b296f989ae2d2712e900c46912
         android:textColorHint="#FFFFFF"
         android:textColorLink="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -68,7 +74,10 @@
         android:hint="city"
         android:inputType="textPostalAddress"
         android:textColor="#FFFFFF"
+<<<<<<< HEAD
         android:textColorHighlight="#FFFFFF"
+=======
+>>>>>>> 0e637f1d133102b296f989ae2d2712e900c46912
         android:textColorHint="#FFFFFF"
         android:textColorLink="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -87,7 +96,10 @@
         android:hint="First name"
         android:inputType="textPersonName"
         android:textColor="#FFFFFF"
+<<<<<<< HEAD
         android:textColorHighlight="#FFFFFF"
+=======
+>>>>>>> 0e637f1d133102b296f989ae2d2712e900c46912
         android:textColorHint="#FDFFFFFF"
         android:textColorLink="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"

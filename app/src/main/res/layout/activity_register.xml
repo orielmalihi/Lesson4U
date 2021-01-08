@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/abeezee_italic"
-        android:text="login"
+        android:text="Register"
         android:textColor="@color/black"
         app:backgroundTint="#FFFFFF"
         app:iconTint="@color/black"
