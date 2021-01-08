@@ -123,9 +123,9 @@ public class SearchForLessonsActivity extends AppCompatActivity implements DateP
                                     Toast.makeText(SearchForLessonsActivity.this, "No lessons were found, try again. ", Toast.LENGTH_SHORT).show();
                                 }
                                 else{
-                                   Intent intent  = new Intent(getApplicationContext(), LessonResults.class);
-                                   intent.putParcelableArrayListExtra("MatchedLessons", MatchedLessons);
-                                   intent.putExtra("lessonIDs", MatchedLessonIDs);
+                                   Intent intent1  = new Intent(getApplicationContext(), LessonResults.class);
+                                   intent1.putParcelableArrayListExtra("MatchedLessons", MatchedLessons);
+                                   intent1.putExtra("lessonIDs", MatchedLessonIDs);
                                    startActivity(intent);
                                 }
 

@@ -115,14 +115,15 @@
 
     <Button
         android:id="@+id/date2"
-        android:layout_width="139dp"
+        android:layout_width="293dp"
         android:layout_height="43dp"
+        android:background="#B000838F"
         android:text="Date"
+        app:backgroundTint="#B000838F"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.216"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.537" />
+        app:layout_constraintVertical_bias="0.54" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
