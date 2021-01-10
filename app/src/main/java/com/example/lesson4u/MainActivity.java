@@ -3,8 +3,13 @@ package com.example.lesson4u;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -27,9 +32,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener ,SensorEventListener {
     FirebaseAuth auth = FirebaseAuth.getInstance();
     FirebaseDatabase database = FirebaseDatabase.getInstance();
+    private SensorManager sensorManager;
+    private Sensor tempSensor;
+    private Boolean isTempAvailable;
     final String TAG = "MainActivity";
     SharedPreferences sp;
    // Button logout;
@@ -37,12 +45,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button dynamic;
     Button scheduledLessons;
     TextView welcome;
+    TextView temp;
     String type;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+
 
 //        Log.d(TAG, "uid is " + auth.getUid() + ", uid is "+auth.getCurrentUser().getUid());
 
@@ -56,6 +67,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Toast.makeText(this, "Already logged in", Toast.LENGTH_LONG).show();
 
             welcome = findViewById(R.id.textView);
+            temp = findViewById(R.id.Temperature);
             profile = findViewById(R.id.profilebt);
             dynamic = findViewById(R.id.dinamicBt);
             scheduledLessons = findViewById(R.id.scheduledLessonsBt);
@@ -67,10 +79,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             type = sp.getString("type", null);
             Log.d(TAG, "type is " + type);
 
-
-
-
-    }}
+        }
+        if (sensorManager.getDefaultSensor(Sensor.TYPE_AMBIENT_TEMPERATURE) != null){
+           tempSensor = sensorManager.getDefaultSensor(Sensor.TYPE_AMBIENT_TEMPERATURE);
+           isTempAvailable = true;
+        }
+        else{
+            temp.setText("Temperature sensor is not available ");
+            isTempAvailable = false;
+        }
+    }
 
 
 
@@ -228,6 +246,32 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
+        }
+    }
+
+    @Override
+    public void onSensorChanged(SensorEvent event) {
+        temp.setText(event.values[0] + " °C" );
+    }
+
+    @Override
+    public void onAccuracyChanged(Sensor sensor, int accuracy) {
+
+    }
+
+    @Override
+    protected  void  onResume() {
+        super.onResume();
+        if (isTempAvailable){
+            sensorManager.registerListener(this, tempSensor, SensorManager.SENSOR_DELAY_NORMAL);
+        }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if (isTempAvailable){
+            sensorManager.unregisterListener(this);
         }
     }
 }

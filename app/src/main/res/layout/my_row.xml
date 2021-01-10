@@ -5,12 +5,13 @@
     android:id="@+id/mainLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/booksback">
+    android:background="@color/white">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="331dp"
-        android:layout_height="763dp"
+        android:layout_width="353dp"
+        android:layout_height="150dp"
         android:layout_marginBottom="5dp"
+        app:cardBackgroundColor="#36F5F8CC"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,7 +20,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="150dp">
+            android:layout_height="107dp">
 
             <ImageView
                 android:id="@+id/imageView11"
