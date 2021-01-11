@@ -36,7 +36,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.time.setText("Starts at: " + MatchedLessons.get(position).getTime()+":00 ,");
+        holder.time.setText("Starts at: " + MatchedLessons.get(position).getTime()+":00 ");
         holder.price.setText("Price: "+MatchedLessons.get(position).getPrice()+"₪");
 
         holder.mainLayout.setOnClickListener(new View.OnClickListener() {

@@ -119,18 +119,16 @@ public class SearchForLessonsActivity extends AppCompatActivity implements DateP
                                         }
                                     }
                                 }
-                                 Intent intent = new Intent(getApplicationContext(), LessonResults.class);
-                                intent.putExtra("MatchedLessons", MatchedLessons);
-                                startActivity(intent);
-
+//
                                 if(MatchedLessons.isEmpty()){
-                                    Toast.makeText(SearchForLessonsActivity.this, "No lessons were found, try again. ", Toast.LENGTH_SHORT).show();
+                                   // Toast.makeText(SearchForLessonsActivity.this, "No lessons were found, try again. ", Toast.LENGTH_SHORT).show();
                                 }
                                 else{
                                    Intent intent1  = new Intent(getApplicationContext(), LessonResults.class);
                                    intent1.putParcelableArrayListExtra("MatchedLessons", MatchedLessons);
                                    intent1.putExtra("lessonIDs", MatchedLessonIDs);
-                                   startActivity(intent);
+                                   startActivity(intent1);
+                                   finish();
                                 }
 
 

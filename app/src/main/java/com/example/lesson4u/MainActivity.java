@@ -2,14 +2,8 @@ package com.example.lesson4u;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.hardware.Sensor;
-import android.hardware.SensorEvent;
-import android.hardware.SensorEventListener;
-import android.hardware.SensorManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -20,24 +14,17 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener ,SensorEventListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     FirebaseAuth auth = FirebaseAuth.getInstance();
     FirebaseDatabase database = FirebaseDatabase.getInstance();
-    private SensorManager sensorManager;
-    private Sensor tempSensor;
-    private Boolean isTempAvailable;
     final String TAG = "MainActivity";
     SharedPreferences sp;
    // Button logout;
@@ -45,29 +32,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button dynamic;
     Button scheduledLessons;
     TextView welcome;
-    TextView temp;
     String type;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
-
-
-//        Log.d(TAG, "uid is " + auth.getUid() + ", uid is "+auth.getCurrentUser().getUid());
 
         Log.d(TAG, "uid is " + auth.getUid());
         if (auth.getUid() == null) {
             Intent intent = new Intent(this, LoginOrRegister.class);
             startActivity(intent);
             finish();
-        } else {
+        }
+        else {
             refreshPS();
-            Toast.makeText(this, "Already logged in", Toast.LENGTH_LONG).show();
-
             welcome = findViewById(R.id.textView);
-            temp = findViewById(R.id.Temperature);
             profile = findViewById(R.id.profilebt);
             dynamic = findViewById(R.id.dinamicBt);
             scheduledLessons = findViewById(R.id.scheduledLessonsBt);
@@ -80,14 +60,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Log.d(TAG, "type is " + type);
 
         }
-        if (sensorManager.getDefaultSensor(Sensor.TYPE_AMBIENT_TEMPERATURE) != null){
-           tempSensor = sensorManager.getDefaultSensor(Sensor.TYPE_AMBIENT_TEMPERATURE);
-           isTempAvailable = true;
-        }
-        else{
-            temp.setText("Temperature sensor is not available ");
-            isTempAvailable = false;
-        }
     }
 
 
@@ -97,17 +69,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (v == profile) {
             Intent intent = new Intent(this, ProfileActivity.class);
             startActivity(intent);
-        } else if (v == dynamic) {
+        }
+        else if (v == dynamic) {
             if (type!=null && type.equals("student")) {
                 Intent intent = new Intent(this, SearchForLessonsActivity.class);
                 startActivity(intent);
-
-            } else if (type!=null && type.equals("teacher")) {
+            }
+            else if (type!=null && type.equals("teacher")) {
                 Intent intent = new Intent(this, AddLessonActivity.class);
                 startActivity(intent);
 
             }
-        } else if (v == scheduledLessons) {
+        }
+        else if (v == scheduledLessons) {
             String currUserId = auth.getCurrentUser().getUid();
             ArrayList<String> lessonIds = new ArrayList<>();
             ArrayList<LessonObj> lessons = new ArrayList<>();
@@ -142,9 +116,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 }
             });
-
-
-
         }
     }
 
@@ -173,7 +144,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         dynamic.setText("search for lessons");
 
                         Log.d(TAG, "refreshPS:dataSnapshot first name = "+s.getFirstName());
-                    } else if(type.equals("teachers")){
+                    }
+                    else if(type.equals("teachers")){
                         type = "teacher";
                         TeacherObj t = dataSnapshot.child(auth.getUid()).getValue(TeacherObj.class);
                         addInfoToTheSharedPreferencesFile("type", type);
@@ -196,26 +168,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onCancelled(DatabaseError databaseError) {
                 Log.d(TAG, "refreshPS:onCancelled", databaseError.toException());
-
             }
-
         };
-
-
-//        Log.d(TAG, "userRef is " + userRef.getKey() + ", userRef2 is " + userRef2.getKey());
-
         studentsRef.addValueEventListener(listener);
         teachersRef.addValueEventListener(listener);
-
-
     }
+
     private void addInfoToTheSharedPreferencesFile(String key, String value){
         sp = getApplicationContext().getSharedPreferences("user_details", 0);
         SharedPreferences.Editor editor = sp.edit();
         editor.putString(key, value);
         editor.apply();
     }
-
 
     public void NavigateFacebook(View view) {
         Log.w(TAG, "NavigateFacebook");
@@ -246,32 +210,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
-        }
-    }
-
-    @Override
-    public void onSensorChanged(SensorEvent event) {
-        temp.setText(event.values[0] + " °C" );
-    }
-
-    @Override
-    public void onAccuracyChanged(Sensor sensor, int accuracy) {
-
-    }
-
-    @Override
-    protected  void  onResume() {
-        super.onResume();
-        if (isTempAvailable){
-            sensorManager.registerListener(this, tempSensor, SensorManager.SENSOR_DELAY_NORMAL);
-        }
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        if (isTempAvailable){
-            sensorManager.unregisterListener(this);
         }
     }
 }
